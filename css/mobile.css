@@ -165,15 +165,15 @@ body{
     left:0;
     width:100vw;
 }
-.logo{
+.logo>img{
     display: block;
     height:var( --logo-height );
-    width:var( --logo-width );
+    // width:var( --logo-width );
     padding:var( --logo-padding );
     margin:var( --logo-margin );
-    background-image:var( --logo-bg-img );
-    background-size: contain;
-    background-repeat: no-repeat;
+    // background-image:var( --logo-bg-img );
+    // background-size: contain;
+    // background-repeat: no-repeat;
 }
 .header .row,ul.navbar-nav,ul.navbar-nav>li,.navbar-nav>li>a,.menu-btn{
     display:block;
