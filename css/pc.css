@@ -186,27 +186,54 @@ body{
     position:fixed;
     right:0;
     top:0;
+    /*当浏览器宽度很小时菜单按钮被点击，按钮旋转180度*/
+    transform:rotate(180deg);     /* IE 9 */
+    -ms-transform:rotate(180deg);     /* IE 9 */
+    -moz-transform:rotate(180deg);    /* Firefox */
+    -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+    -o-transform:rotate(180deg);  /* Opera */
+    /*旋转时有过渡动画*/
+    transition: transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;  /* Firefox 4 */
+    -webkit-transition: -webkit-transform 0.2s;   /* Safari 和 Chrome */
+    -o-transition: -o-transform 0.2s;    /* Opera */
+}
+.open{
+    /*当浏览器宽度很小时菜单按钮被点击，按钮旋转180度*/
+    transform:rotate(0deg);     /* IE 9 */
+    -ms-transform:rotate(0deg);     /* IE 9 */
+    -moz-transform:rotate(0deg);    /* Firefox */
+    -webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+    -o-transform:rotate(0deg);  /* Opera */
+    /*旋转时有过渡动画*/
+    transition: transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;  /* Firefox 4 */
+    -webkit-transition: -webkit-transform 0.2s;   /* Safari 和 Chrome */
+    -o-transition: -o-transform 0.2s;    /* Opera */
 }
 .close .line1{
     transform:rotate(45deg);
-    // -ms-transform:rotate(45deg);     /* IE 9 */
-    // -moz-transform:rotate(45deg);    /* Firefox */
-    // -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
-    // -o-transform:rotate(45deg);  /* Opera */
+    /*旋转菜单按钮的第一根线*/
+    -ms-transform:rotate(45deg);     /* IE 9 */
+    -moz-transform:rotate(45deg);    /* Firefox */
+    -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+    -o-transform:rotate(45deg);  /* Opera */
     position: relative;
-    top:30%;
+    top:29%;
 }
 .close .line2{
+    /*隐藏菜单按钮的第二根线*/
     opacity: 0;
 }
 .close .line3{
     transform:rotate(-45deg);
-    // -ms-transform:rotate(-45deg);     /* IE 9 */
-    // -moz-transform:rotate(-45deg);    /* Firefox */
-    // -webkit-transform:rotate(-45deg); /* Safari 和 Chrome */
-    // -o-transform:rotate(-45deg);  /* Opera */
+    /*旋转菜单按钮的第三根线*/
+    -ms-transform:rotate(-45deg);     /* IE 9 */
+    -moz-transform:rotate(-45deg);    /* Firefox */
+    -webkit-transform:rotate(-45deg); /* Safari 和 Chrome */
+    -o-transform:rotate(-45deg);  /* Opera */
     position: relative;
-    bottom:30%;
+    bottom:29%;
 }
 ul.navbar-nav>li>a{
     line-height: var( --header-height ) !important;
@@ -228,6 +255,7 @@ ul.navbar-nav>li>a:focus{
     margin:0;
     position:fixed;
     top:var( --header-height );
+    z-index: 9999999;
 
 }
 .show{
@@ -238,8 +266,9 @@ ul.navbar-nav>li>a:focus{
     position:fixed;
     top:var( --header-height );
     right:0;
+    z-index: 99999999;
 }
-ul.navbar-nav>li {
+ul.show>li {
     height:1vw !important;
     width:100%;
     height:8vw !important;
