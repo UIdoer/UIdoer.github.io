@@ -49,10 +49,16 @@
         /*鼠标经过导航时候的字体颜色*/
         --nav-focus-color:#0ff;
 
+
         /*浏览器宽度很小时，导航的背景颜色*/
-        --nav-ms-xs-bgcolor:#eee;
+        --nav-ms-xs-bgcolor:#fff;
         /*浏览器宽度很小时，导航遮罩背景颜色*/
         --nav-ms-xs-mask-bgcolor:rgba(0,0,0,0.5);
+        /*浏览器宽度很小时，导航与header的分割线样式*/
+        --nav-ms-xs-border-top:#eee solid 1px;
+
+        /*banner背景图片定位方式*/
+        --banner-bgposition:center bottom;
 
 
 
@@ -72,7 +78,7 @@
     display:inline-block;
     width:100%;
     height:100%;
-    background-position: center center !important;
+    background-position: var( --banner-bgposition ) !important;
 }
 
 .row{
@@ -266,6 +272,7 @@ ul.navbar-nav>li>a:focus{
     position:fixed;
     top:var( --header-height );
     right:0;
+    border-top: var( --nav-ms-xs-border-top );
     z-index: 99999999;
 }
 ul.show>li {
