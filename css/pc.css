@@ -56,6 +56,8 @@
         --nav-ms-xs-mask-bgcolor:rgba(0,0,0,0.5);
         /*浏览器宽度很小时，导航与header的分割线样式*/
         --nav-ms-xs-border-top:#eee solid 1px;
+        /*浏览器宽度很小时，导航每个链接的高度*/
+        --nav-ms-xs-link-height:10vw;
 
         /*banner背景图片定位方式*/
         --banner-bgposition:center bottom;
@@ -278,11 +280,13 @@ ul.navbar-nav>li>a:focus{
     z-index: 99999999;
 }
 ul.show>li {
-    height:1vw !important;
     width:100%;
-    height:8vw !important;
+    height:var( --nav-ms-xs-link-height ) !important;
     float:right;
     margin-left: 70vw;
+}
+ul.show>li a{
+    line-height:var( --nav-ms-xs-link-height ) !important;
 }
 .page{
     margin-top:var( --header-height );
