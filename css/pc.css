@@ -1,0 +1,178 @@
+:root{
+
+        /*默认字体颜色*/
+        --color:#333;
+        /*a默认的字体颜色*/
+        --a-color:#006699;
+        /*a经过字体的颜色*/
+        --a-hover-color:#3399ff;
+        /*a聚焦时候的字体颜色*/
+        --a-focus-color:blue;
+
+
+        /*页面背景颜色*/
+        --page-bgcolor:#eee;
+        /*头部背景色*/
+        --header-bgcolor:#fff;
+
+        /*头部高度*/
+        --header-height:70px;
+
+        /*LOGO宽度*/
+        --logo-width:200px;
+        /*LOGO高度*/
+        --logo-height:50px;
+        /*LOGO内边距*/
+        --logo-padding:0;
+        /*LOGO外边距*/
+        --logo-margin:10px 0;
+        /*LOGO背景图*/
+        --logo-bg-img:url(../img/logo.png);
+
+        /*导航的外边距*/
+        --nav-margin:0;
+        /*导航的内边距*/
+        --nav-padding:0 15px;
+        /*鼠标经过导航时候的背景颜色*/
+        --nav-hover-bgcolor:#ccc;
+        /*鼠标经过导航时候的字体颜色*/
+        --nav-hover-color:#000;
+        /*鼠标经过导航时候的背景颜色*/
+        --nav-focus-bgcolor:#666;
+        /*鼠标经过导航时候的字体颜色*/
+        --nav-focus-color:#0ff;
+
+
+}
+/*浏览器宽度很大时，banner高度和显示隐藏*/
+.banner{
+    position: relative;
+    display: block;
+    height:200px;
+}
+@media screen and (min-width:1px) and (max-width:1024px){
+    /*浏览器宽度很小时，banner高度和显示隐藏*/
+    .banner{
+        display:none;
+        height:0;
+    }
+}
+.banner a{
+    display:inline-block;
+    width:100%;
+    height:100%;
+    background-position: center center;
+}
+
+.row{
+        width:1280px;
+        // background:yellow;
+        padding:0;
+        margin:0 auto;
+    }
+
+html{
+    font-family: '微软雅黑','Microsoft YaHei',"Helvetica Neue", 'Helvetica';
+    color:var( --color );
+}
+body{
+    // background-color: #eee;
+    background-color:var( --page-bgcolor ) ;
+
+}
+.container{
+    width:100%;
+    padding:0;
+    margin:0;
+}
+.row{
+    width:1280px;
+    padding:0;
+    margin:0;
+}
+
+@media screen and (min-width:1px) and (max-width:1024px){
+    .row{
+        width:100%;
+        // background:red;
+        padding:0;
+        margin:0;
+    }
+}
+
+
+@media screen and (min-width:1024px) and (max-width:1366px){
+    .row{
+        width:1000px;
+        // background:blue;
+        padding:0;
+        margin:0 auto;
+    }
+}
+@media screen and (min-width:1366px) and (max-width:1921px){
+    .row{
+        width:1280px;
+        // background:yellow;
+        padding:0;
+        margin:0 auto;
+    }
+}
+
+li{
+    list-style: none;
+}
+a{
+    color:var( --a-color );
+}
+.fl{float: left;}
+.fr{float: right;}
+a:hover{
+    color:var( --a-hover-color );
+}
+a:focus{
+    color:var( --a-focus-color );
+}
+body{
+}
+.header{
+    background-color: var( --header-bgcolor );
+    height: var( --header-height );
+}
+.logo{
+    display: block;
+    height:var( --logo-height );
+    width:var( --logo-width );
+    padding:var( --logo-padding );
+    margin:var( --logo-margin );
+    background-image:var( --logo-bg-img );
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.header .row,ul.navbar-nav,ul.navbar-nav>li,.navbar-nav>li>a{
+    display:block;
+    height:100% !important;
+}
+ul.navbar-nav>li>a{
+    line-height: var( --header-height ) !important;
+    padding:var( --nav-padding ) !important;
+    margin:var( --nav-margin ) !important;
+}
+ul.navbar-nav>li>a:hover{
+    background-color:var( --nav-hover-bgcolor );
+    color:var( --nav-hover-color );
+}
+ul.navbar-nav>li>a:focus{
+    background-color:var( --nav-focus-bgcolor );
+    color:var( --nav-focus-color );
+}
+.banner .swiper-container{
+    width:100vw;
+    height: 100%;
+    overflow: hidden;
+}
+
+.banner .swiper-slide,.banner .swiper-slide{
+    heiht:100% !important;
+    background-color:red;
+}
+
