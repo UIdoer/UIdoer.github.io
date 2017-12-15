@@ -34,7 +34,7 @@
         /*LOGO外边距*/
         --logo-margin:10px 0;
         /*LOGO背景图*/
-        --logo-bg-img:url(../img/logo.png);
+        --logo-bg-img:url(img/logo.png);
 
         /*导航的外边距*/
         --nav-margin:0;
