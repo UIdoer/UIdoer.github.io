@@ -8,10 +8,14 @@ function IsPC(){
  return flag;
 }
 var styleLinke = document.getElementById('style');
+var script = document.getElementById('script');
 var head = document.getElementsByTagName('head')[0]
 if(IsPC()){
     styleLinke.setAttribute('href','css/pc.css');
+    script.setAttribute('src','js/pc.js');
 }else{
     styleLinke.setAttribute('href','css/mobile.css');
+    script.setAttribute('src','js/mobile.js');
 }
 head.appendChild(styleLinke);
+head.appendChild(script);

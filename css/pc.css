@@ -59,6 +59,8 @@
 
         /*banner背景图片定位方式*/
         --banner-bgposition:center bottom;
+        /*banner按钮背景*/
+        --banner-btn-bg:#fff;
 
 
 
@@ -294,5 +296,8 @@ ul.show>li {
 .banner .swiper-slide,.banner .swiper-slide{
     heiht:100% !important;
     background-color:#ddd;
+}
+.banner .swiper-pagination-bullet{
+    background:var( --banner-btn-bg );
 }
 

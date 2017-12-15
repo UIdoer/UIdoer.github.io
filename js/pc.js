@@ -17,7 +17,7 @@ $(function(){
             stopOnLastSlide: false,
             disableOnInteraction: true,
         },
-        autoplayDisableOnInteraction : true,
+        autoplayDisableOnInteraction : false,
     });
 
     //屏幕宽度非常小的时候，点击菜单按钮，让按钮来回切换。
