@@ -59,7 +59,7 @@
         /*浏览器宽度很小时，导航的宽度*/
         --nav-ms-xs-width:70vw;
         /*浏览器宽度很小时，导航每个链接的高度*/
-        --nav-ms-xs-link-height:20vw;
+        --nav-ms-xs-link-height:15vw;
 
         /*banner背景图片定位方式*/
         --banner-bgposition:center bottom;
