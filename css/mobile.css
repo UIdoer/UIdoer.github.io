@@ -1,4 +1,303 @@
-body{
-    content:'mobile.css';
-    background:red;
+:root{
+
+        /*默认字体颜色*/
+        --color:#333;
+        /*a默认的字体颜色*/
+        --a-color:#006699;
+        /*a经过字体的颜色*/
+        --a-hover-color:#3399ff;
+        /*a聚焦时候的字体颜色*/
+        --a-focus-color:blue;
+
+
+        /*页面背景颜色*/
+        --page-bgcolor:#eee;
+        /*头部背景色*/
+        --header-bgcolor:#fff;
+        /*头部高度*/
+        --header-height:70px;
+
+        /*浏览器宽度很小时，
+        菜单按钮的颜色*/
+        --menu-btn-color:#000;
+        /*菜单按钮的粗细：基于 --header-height 来乘这个百分比 */
+        --menu-btn-width:10%;
+        /*菜单按钮的内边距*/
+        --menu-padding:10px;
+
+        /*LOGO宽度*/
+        --logo-width:200px;
+        /*LOGO高度*/
+        --logo-height:50px;
+        /*LOGO内边距*/
+        --logo-padding:0;
+        /*LOGO外边距*/
+        --logo-margin:10px 0;
+        /*LOGO背景图*/
+        --logo-bg-img:url(../img/logo.png);
+
+        /*导航的外边距*/
+        --nav-margin:0;
+        /*导航的内边距*/
+        --nav-padding:0 15px;
+        /*鼠标经过导航时候的背景颜色*/
+        --nav-hover-bgcolor:#ccc;
+        /*鼠标经过导航时候的字体颜色*/
+        --nav-hover-color:#000;
+        /*鼠标经过导航时候的背景颜色*/
+        --nav-focus-bgcolor:#666;
+        /*鼠标经过导航时候的字体颜色*/
+        --nav-focus-color:#0ff;
+
+
+        /*浏览器宽度很小时，导航的背景颜色*/
+        --nav-ms-xs-bgcolor:#fff;
+        /*浏览器宽度很小时，导航遮罩背景颜色*/
+        --nav-ms-xs-mask-bgcolor:rgba(0,0,0,0.5);
+        /*浏览器宽度很小时，导航与header的分割线样式*/
+        --nav-ms-xs-border-top:#eee solid 1px;
+
+        /*banner背景图片定位方式*/
+        --banner-bgposition:center bottom;
+        /*banner按钮背景*/
+        --banner-btn-bg:#fff;
+
+
+
 }
+.test{
+    border: red solid 1px !important;
+}
+/*浏览器宽度很大时，banner高度和显示隐藏*/
+.banner{
+    position: relative;
+    // display: block;
+    width:100vw;
+    height:200px;
+}
+
+.banner a{
+    display:inline-block;
+    width:100%;
+    height:100%;
+    background-position: var( --banner-bgposition ) !important;
+}
+
+.row{
+        width:1280px;
+        // background:yellow;
+        padding:0;
+        margin:0 auto;
+    }
+
+html{
+    font-family: '微软雅黑','Microsoft YaHei',"Helvetica Neue", 'Helvetica';
+    color:var( --color );
+}
+body{
+    // background-color: #eee;
+    background-color:var( --page-bgcolor ) ;
+
+}
+.container{
+    width:100%;
+    padding:0;
+    margin:0;
+}
+.row{
+    width:1280px;
+    padding:0;
+    margin:0;
+}
+
+@media screen and (min-width:1px) and (max-width:1024px){
+    .row{
+        width:100%;
+        // background:red;
+        padding:0;
+        margin:0;
+    }
+}
+
+
+@media screen and (min-width:1024px) and (max-width:1366px){
+    .row{
+        width:1000px;
+        // background:blue;
+        padding:0;
+        margin:0 auto;
+    }
+}
+@media screen and (min-width:1366px) and (max-width:1921px){
+    .row{
+        width:1280px;
+        // background:yellow;
+        padding:0;
+        margin:0 auto;
+    }
+}
+
+li{
+    list-style: none;
+}
+a{
+    color:var( --a-color );
+}
+.fl{float: left;}
+.fr{float: right;}
+a:hover{
+    color:var( --a-hover-color );
+}
+a:focus{
+    color:var( --a-focus-color );
+}
+body{
+}
+.header{
+    background-color: var( --header-bgcolor );
+    height: var( --header-height );
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+}
+.logo{
+    display: block;
+    height:var( --logo-height );
+    width:var( --logo-width );
+    padding:var( --logo-padding );
+    margin:var( --logo-margin );
+    background-image:var( --logo-bg-img );
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.header .row,ul.navbar-nav,ul.navbar-nav>li,.navbar-nav>li>a,.menu-btn{
+    display:block;
+    height:100% !important;
+
+}
+.menu-btn{
+    width: var( --header-height );
+    line-height:var( --header-height );
+    text-align: center;
+    padding:var( --menu-padding );
+}
+.menu-btn .line{
+    height: var( --menu-btn-width );
+    --margin-top: calc( (( var( --header-height ) - var( --menu-padding ) * 2 ) - var( --menu-btn-width ) * 3 ) / 3 );
+    margin-top: calc( var( --margin-top ) - var( --margin-top ) / 6 );
+    background-color: var( --menu-btn-color );
+}
+.close{
+    width:var( --header-height );
+    height:var( --header-height ) !important;
+    position:fixed;
+    right:0;
+    top:0;
+    /*当浏览器宽度很小时菜单按钮被点击，按钮旋转180度*/
+    transform:rotate(180deg);     /* IE 9 */
+    -ms-transform:rotate(180deg);     /* IE 9 */
+    -moz-transform:rotate(180deg);    /* Firefox */
+    -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+    -o-transform:rotate(180deg);  /* Opera */
+    /*旋转时有过渡动画*/
+    transition: transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;  /* Firefox 4 */
+    -webkit-transition: -webkit-transform 0.2s;   /* Safari 和 Chrome */
+    -o-transition: -o-transform 0.2s;    /* Opera */
+}
+.open{
+    /*当浏览器宽度很小时菜单按钮被点击，按钮旋转180度*/
+    transform:rotate(0deg);     /* IE 9 */
+    -ms-transform:rotate(0deg);     /* IE 9 */
+    -moz-transform:rotate(0deg);    /* Firefox */
+    -webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+    -o-transform:rotate(0deg);  /* Opera */
+    /*旋转时有过渡动画*/
+    transition: transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;  /* Firefox 4 */
+    -webkit-transition: -webkit-transform 0.2s;   /* Safari 和 Chrome */
+    -o-transition: -o-transform 0.2s;    /* Opera */
+}
+.close .line1{
+    transform:rotate(45deg);
+    /*旋转菜单按钮的第一根线*/
+    -ms-transform:rotate(45deg);     /* IE 9 */
+    -moz-transform:rotate(45deg);    /* Firefox */
+    -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+    -o-transform:rotate(45deg);  /* Opera */
+    position: relative;
+    top:29%;
+}
+.close .line2{
+    /*隐藏菜单按钮的第二根线*/
+    opacity: 0;
+}
+.close .line3{
+    transform:rotate(-45deg);
+    /*旋转菜单按钮的第三根线*/
+    -ms-transform:rotate(-45deg);     /* IE 9 */
+    -moz-transform:rotate(-45deg);    /* Firefox */
+    -webkit-transform:rotate(-45deg); /* Safari 和 Chrome */
+    -o-transform:rotate(-45deg);  /* Opera */
+    position: relative;
+    bottom:29%;
+}
+ul.navbar-nav>li>a{
+    line-height: var( --header-height ) !important;
+    padding:var( --nav-padding ) !important;
+    margin:var( --nav-margin ) !important;
+}
+ul.navbar-nav>li>a:hover{
+    background-color:var( --nav-hover-bgcolor );
+    color:var( --nav-hover-color );
+}
+ul.navbar-nav>li>a:focus{
+    background-color:var( --nav-focus-bgcolor );
+    color:var( --nav-focus-color );
+}
+.tmp-nav{
+    background:var( --nav-ms-xs-mask-bgcolor );
+    width:100vw;
+    height:100vh !important;
+    margin:0;
+    position:fixed;
+    top:var( --header-height );
+    z-index: 9999999;
+
+}
+.show{
+    background:var( --nav-ms-xs-bgcolor );
+    display: block !important;
+    width:30vw;
+    margin:0;
+    position:fixed;
+    top:var( --header-height );
+    right:0;
+    border-top: var( --nav-ms-xs-border-top );
+    z-index: 99999999;
+}
+ul.show>li {
+    height:1vw !important;
+    width:100%;
+    height:8vw !important;
+    float:right;
+    margin-left: 70vw;
+}
+.page{
+    margin-top:var( --header-height );
+}
+.banner .swiper-container{
+    width:100vw;
+    height: 100%;
+    overflow: hidden;
+}
+
+.banner .swiper-slide,.banner .swiper-slide{
+    heiht:100% !important;
+    background-color:#ddd;
+}
+.banner .swiper-pagination-bullet{
+    background:var( --banner-btn-bg );
+}
+
