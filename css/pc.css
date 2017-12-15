@@ -14,9 +14,16 @@
         --page-bgcolor:#eee;
         /*头部背景色*/
         --header-bgcolor:#fff;
-
         /*头部高度*/
         --header-height:70px;
+
+        /*浏览器宽度很小时，
+        菜单按钮的颜色*/
+        --menu-btn-color:#000;
+        /*菜单按钮的粗细：基于 --header-height 来乘这个百分比 */
+        --menu-btn-width:10%;
+        /*菜单按钮的内边距*/
+        --menu-padding:10px;
 
         /*LOGO宽度*/
         --logo-width:200px;
@@ -42,22 +49,25 @@
         /*鼠标经过导航时候的字体颜色*/
         --nav-focus-color:#0ff;
 
+        /*浏览器宽度很小时，导航的背景颜色*/
+        --nav-ms-xs-bgcolor:#eee;
+        /*浏览器宽度很小时，导航遮罩背景颜色*/
+        --nav-ms-xs-mask-bgcolor:rgba(0,0,0,0.5);
 
+
+
+}
+.test{
+    border: red solid 1px !important;
 }
 /*浏览器宽度很大时，banner高度和显示隐藏*/
 .banner{
     position: relative;
-    display: block;
+    // display: block;
     width:100vw;
     height:200px;
 }
-@media screen and (min-width:1px) and (max-width:1024px){
-    /*浏览器宽度很小时，banner高度和显示隐藏*/
-    .banner{
-        display:none;
-        height:0;
-    }
-}
+
 .banner a{
     display:inline-block;
     width:100%;
@@ -138,6 +148,10 @@ body{
 .header{
     background-color: var( --header-bgcolor );
     height: var( --header-height );
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
 }
 .logo{
     display: block;
@@ -149,9 +163,50 @@ body{
     background-size: contain;
     background-repeat: no-repeat;
 }
-.header .row,ul.navbar-nav,ul.navbar-nav>li,.navbar-nav>li>a{
+.header .row,ul.navbar-nav,ul.navbar-nav>li,.navbar-nav>li>a,.menu-btn{
     display:block;
     height:100% !important;
+
+}
+.menu-btn{
+    width: var( --header-height );
+    line-height:var( --header-height );
+    text-align: center;
+    padding:var( --menu-padding );
+}
+.menu-btn .line{
+    height: var( --menu-btn-width );
+    --margin-top: calc( (( var( --header-height ) - var( --menu-padding ) * 2 ) - var( --menu-btn-width ) * 3 ) / 3 );
+    margin-top: calc( var( --margin-top ) - var( --margin-top ) / 6 );
+    background-color: var( --menu-btn-color );
+}
+.close{
+    width:var( --header-height );
+    height:var( --header-height ) !important;
+    position:fixed;
+    right:0;
+    top:0;
+}
+.close .line1{
+    transform:rotate(45deg);
+    // -ms-transform:rotate(45deg);     /* IE 9 */
+    // -moz-transform:rotate(45deg);    /* Firefox */
+    // -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+    // -o-transform:rotate(45deg);  /* Opera */
+    position: relative;
+    top:30%;
+}
+.close .line2{
+    opacity: 0;
+}
+.close .line3{
+    transform:rotate(-45deg);
+    // -ms-transform:rotate(-45deg);     /* IE 9 */
+    // -moz-transform:rotate(-45deg);    /* Firefox */
+    // -webkit-transform:rotate(-45deg); /* Safari 和 Chrome */
+    // -o-transform:rotate(-45deg);  /* Opera */
+    position: relative;
+    bottom:30%;
 }
 ul.navbar-nav>li>a{
     line-height: var( --header-height ) !important;
@@ -165,6 +220,34 @@ ul.navbar-nav>li>a:hover{
 ul.navbar-nav>li>a:focus{
     background-color:var( --nav-focus-bgcolor );
     color:var( --nav-focus-color );
+}
+.tmp-nav{
+    background:var( --nav-ms-xs-mask-bgcolor );
+    width:100vw;
+    height:100vh !important;
+    margin:0;
+    position:fixed;
+    top:var( --header-height );
+
+}
+.show{
+    background:var( --nav-ms-xs-bgcolor );
+    display: block !important;
+    width:30vw;
+    margin:0;
+    position:fixed;
+    top:var( --header-height );
+    right:0;
+}
+ul.navbar-nav>li {
+    height:1vw !important;
+    width:100%;
+    height:8vw !important;
+    float:right;
+    margin-left: 70vw;
+}
+.page{
+    margin-top:var( --header-height );
 }
 .banner .swiper-container{
     width:100vw;

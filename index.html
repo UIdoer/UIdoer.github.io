@@ -15,7 +15,7 @@
     <script src="js/jquery.touchSwipe.min.js"></script>
     <script>
         if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
-            new WOW().init(); 
+            new WOW().init();
         };
     </script>
     <script src="js/changeStyle.js"></script>
@@ -28,32 +28,46 @@
             <div class="me fl">
                 <a href="#" class="logo"></a>
             </div>
-            <ul class="link fr nav navbar-nav hidden-xs">
-                <li> <a href="#" class="active">11111</a></li>
-                <li> <a href="#">11111</a></li>
-                <li> <a href="#">11111 </a></li>
-                <li> <a href="#">11111</a></li>
-            </ul>
+                <ul class="link fr nav navbar-nav hidden-xs hidden-sm">
+                    <li> <a href="#" class="active">11111</a></li>
+                    <li> <a href="#">11111</a></li>
+                    <li> <a href="#">11111 </a></li>
+                    <li> <a href="#">11111</a></li>
+                </ul>
+        <div class="menu-btn visible-xs visible-sm fr">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
         </div>
-    </div>
-    <!-- banner -->
-    <div class="banner">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><a href="#" style="background:url(img/banner-01.png);"></a></div>
-              <div class="swiper-slide"><a href="#" style="background:url(img/banner-02.png);"></a></div>
-              <div class="swiper-slide"><a href="#" style="background:url(img/banner-03.png);"></a></div>
-            </div>
-            <div class="swiper-pagination">
-                <span class="swiper-pagination-bullet"></span>
-                <span class="swiper-pagination-bullet"></span>
-                <span class="swiper-pagination-bullet"></span>
-            </div>
         </div>
-    <script src="js/swiper.min.js"></script>
-    </div>
-    <!-- page -->
 
+    </div>
+
+    <!-- page -->
+    <div class="container page">
+        <!-- banner -->
+        <div class="banner hidden-xs">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><a href="#" style="background:url(img/banner-01.png);"></a></div>
+                  <div class="swiper-slide"><a href="#" style="background:url(img/banner-02.png);"></a></div>
+                  <div class="swiper-slide"><a href="#" style="background:url(img/banner-03.png);"></a></div>
+                </div>
+                <div class="swiper-pagination">
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                </div>
+            </div>
+        <script src="js/swiper.min.js"></script>
+        </div>
+        <div class="row">
+            <div class="test col-md-8 col-lg-8 col-xs-12">
+                jij
+            </div>
+            <div class="test col-md-4 col-lg-4 hidden-xs hidden-sm">div</div>
+        </div>
+    </div>
 
 
     <div class="footer">

@@ -19,4 +19,23 @@ $(function(){
         },
         autoplayDisableOnInteraction : false,
     });
+
+    //屏幕宽度非常小的时候，点击菜单按钮，让按钮来回切换。
+    //同时切换菜单的显示与隐藏
+
+    $('.menu-btn').click(function(){
+        $(this).toggleClass('close');
+        if(!$('.link').hasClass('show')){
+            var tmp_nav = $('<div>').addClass('tmp-nav').bind('click',function(event){
+                event.stopPropagation();
+                $('.menu-btn').before($('.link').removeClass('show'));
+                $('.tmp-nav').remove();
+            }).appendTo('body');
+            $('.link').addClass('show').appendTo('body');
+        }else{
+                $('.menu-btn').before($('.link').removeClass('show'));
+                $('.tmp-nav').remove();
+        }
+    });
+
 });
