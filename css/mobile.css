@@ -290,6 +290,7 @@ ul.show>li a{
 }
 .page{
     margin-top:var( --header-height );
+    z-index:9;
 }
 .banner .swiper-container{
     width:100vw;
