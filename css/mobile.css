@@ -303,3 +303,31 @@ ul.show>li a{
     background:var( --banner-btn-bg );
 }
 
+.page .row{
+    padding:10px;
+}
+.content-wrap{
+    border:1px solid #ccc;
+    border-radius: 10px;
+    overflow:hidden;
+    padding:0;
+    background:#fff;
+}
+
+.content{
+    border-right: 1px solid #eee;
+    width:50%;
+}
+.content-wrap .fr{
+    border-right:0 solid #ccc;
+}
+.content div{
+    border-bottom: 1px solid #eee;
+    height:calc(50vw - 10px);
+    line-height:calc(50vw - 10px);
+    font-size: 10vw;
+    text-align:center;
+}
+.aside{
+    display: none;
+}

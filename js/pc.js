@@ -50,5 +50,16 @@ $(function(){
         }
     });
 
+    // 窗口滚动条 scroll style
+    $('html').niceScroll({
+        ccursorcolor:"#444",
+        background:'rgba(0,0,0,0.2)',
+        cursoropacitymax:1,
+        touchbehavior:false,
+        cursorwidth:"8px",
+        cursorborder:"0",
+        cursorborderradius:"8px"
+    });
+
 
 });
