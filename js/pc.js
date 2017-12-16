@@ -24,7 +24,7 @@ $(function(){
     //同时切换菜单的显示与隐藏
 
     $('.menu-btn').click(function(){
-        if(!$('.link').hasClass('show')){
+        if(!$('.link').is(':visible')){
             $(this).addClass('close').removeClass('open');
             var tmp_nav = $('<div>').addClass('tmp-nav').bind('click',function(event){
                 event.stopPropagation();
@@ -43,10 +43,12 @@ $(function(){
     //如果窗口大于或等于992，那么将菜单放至menu-btn之前
     //同时移除tmp-nav，也将menu-btn的close这个类移除
     $(window).resize(function(){
-        if( $(this).width()>= 992 ){
+        if( $(this).width() >= 992 ){
             $('.menu-btn').before($('.link').removeClass('show'));
             $('.tmp-nav').remove();
             $('.close').removeClass('close')
+        }else if($(this).width() < 992){
+
         }
     });
 

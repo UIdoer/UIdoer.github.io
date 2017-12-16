@@ -332,5 +332,20 @@ ul.show>li a{
     text-align:center;
 }
 .aside{
-    display: none;
+    padding:0;
+}
+.aside>div{
+    height:150vh;
+    background:#fff;
+    margin-left: 15px;
+    border:1px solid #ccc;
+    border-radius: 10px;
+}
+
+@media screen and (min-width:1024px) and (max-width:1921px){
+    .content div{
+        height:420px;
+        line-height:420px;
+        font-size:10vw;
+    }
 }

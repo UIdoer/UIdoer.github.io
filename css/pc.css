@@ -63,6 +63,7 @@
         --banner-bgposition:center bottom;
         /*banner按钮背景*/
         --banner-btn-bg:#fff;
+        --banner-height:404px;
 
 
 
@@ -75,7 +76,7 @@
     position: relative;
     // display: block;
     width:100vw;
-    height:200px;
+    height:var( --banner-height );
 }
 
 .banner a{
@@ -121,24 +122,31 @@ body{
     }
 }
 
-
-@media screen and (min-width:992px) and (max-width:1200px){
+@media screen and (min-width:992px) and (max-width:1366px){
     .row{
-        width:1000px;
-        // background:blue;
+        width:98% !important;
         padding:0;
         margin:0 auto;
     }
+
 }
-@media screen and (min-width:1200px) and (max-width:1921px){
+
+@media screen and (min-width:1367px) and (max-width:1920px){
     .row{
-        width:1280px;
+        width:84%;
         // background:yellow;
         padding:0;
         margin:0 auto;
     }
 }
-
+@media (min-width:1921px){
+    .row{
+        width:90%;
+        // background:yellow;
+        padding:0;
+        margin:0 auto;
+    }
+}
 li{
     list-style: none;
 }
@@ -271,6 +279,7 @@ ul.navbar-nav>li>a:focus{
     z-index: 9999999;
 
 }
+
 .show{
     background:var( --nav-ms-xs-bgcolor );
     display: block !important;
@@ -334,21 +343,20 @@ ul.show>li a{
     text-align:center;
 }
 .aside{
+    padding:0;
+}
+.aside>div{
+    height:150vh;
     background:#fff;
+    margin-left: 15px;
     border:1px solid #ccc;
     border-radius: 10px;
-    height:150vh;
 }
+
 @media screen and (min-width:1024px) and (max-width:1921px){
-    .row{
-        width:1280px;
-        // background:yellow;
-        padding:0;
-        margin:0 auto;
-    }
     .content div{
         height:420px;
         line-height:420px;
-        font-size: 10vw;
+        font-size:10vw;
     }
 }
