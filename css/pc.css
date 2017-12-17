@@ -28,7 +28,7 @@
         --menu-btn-speed:0.2s;
 
         /*LOGO高度*/
-        --logo-height:70px;
+        --logo-height:var( --header-height );
         /*LOGO内边距*/
         --logo-padding:10px 0;
         /*LOGO外边距*/

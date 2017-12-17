@@ -15,7 +15,7 @@
         /*头部背景色*/
         --header-bgcolor:#fff;
         /*头部高度*/
-        --header-height:70px;
+        --header-height:50px;
 
         /*浏览器宽度很小时，
         菜单按钮的颜色*/
@@ -28,7 +28,7 @@
         --menu-btn-speed:0.2s;
 
         /*LOGO高度*/
-        --logo-height:70px;
+        --logo-height:var( --header-height );
         /*LOGO内边距*/
         --logo-padding:10px 0;
         /*LOGO外边距*/
