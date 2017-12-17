@@ -94,19 +94,31 @@ $(function(){
         },200);
         Mask('show','-70vw');
     }
+    function showL(){
+        $('.header,.page').animate({
+            marginLeft: winW * 0.7
+        },200);
+        $('.me').animate({
+            left:0
+        },200);
+        Mask('show','70vw');
+    }
     function Mask(display,left){
         if(display == 'show'){
             $('#mask').css({
+                display:'block',
                 width:'100vw',
                 height:'100vh',
-                background:'rgba(0,0,0,0.5)',
                 zIndex:999999,
+                background:'rgba(0,0,0,0)',
                 position:'fixed',
                 top:0,
                 'left':0
             }).animate({
-                'left':'-70vw',
-            },200).show();
+                'left':left,
+                background:'rgba(0,0,0,0.9)'
+
+            },200);
         }else{
 
         }
@@ -120,7 +132,6 @@ $(function(){
              $('.link').animate({
                 right:'-70vw'
             },200);
-             $(this).css({'left':0}).hide(200);
         }else{
             $('.header,.page').animate({
                 marginLeft: 0
@@ -128,8 +139,8 @@ $(function(){
              $('.me').animate({
                 left:'-70vw'
             },200);
-             $(this).css({'left':0}).hide(200);
         }
+             $(this).animate({'left':0,background:'rgba(0,0,0,0)'}).css({display:'none'});
     });
 
     $('.page').swipe({
@@ -140,6 +151,9 @@ $(function(){
                 // alert('click window');
                LoR = 'left';
                showR()
+            }else if( direction == 'right'){
+               LoR = 'left';
+               showL();
             }
           }
 
