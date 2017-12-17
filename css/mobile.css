@@ -379,3 +379,12 @@ ul.show>li a{
     top:0;
     left:-60vw;
 }
+#mask{
+    width:70vw;
+    height:100vh;
+    display:none;
+    background:rgba(0,0,0,0);
+    position:fixed;
+    top:0;
+    left:0;
+}
