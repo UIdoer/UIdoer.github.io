@@ -167,11 +167,15 @@ body{
     z-index:99999;
     box-shadow: 0 3px 5px rgba(0,0,0,0.2);
 }
-.logo>img{
-    display: block !important;
+
+.logo{
+    display: block;
     height:var( --logo-height );
     padding:var( --logo-padding );
     margin:var( --logo-margin );
+}
+.logo:hover{
+    cursor: pointer;
 }
 .header .row,ul.navbar-nav,ul.navbar-nav>li,.navbar-nav>li>a,.menu-btn{
     display:block;

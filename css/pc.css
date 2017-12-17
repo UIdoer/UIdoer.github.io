@@ -25,16 +25,12 @@
         /*菜单按钮的内边距*/
         --menu-padding:10px;
 
-        /*LOGO宽度*/
-        --logo-width:200px;
         /*LOGO高度*/
-        --logo-height:50px;
+        --logo-height:70px;
         /*LOGO内边距*/
-        --logo-padding:0;
+        --logo-padding:10px 0;
         /*LOGO外边距*/
-        --logo-margin:10px 0;
-        /*LOGO背景图*/
-        --logo-bg-img:url(../img/logo.png);
+        --logo-margin:0;
 
         /*导航的外边距*/
         --nav-margin:0;
@@ -176,14 +172,12 @@ body{
 .logo{
     display: block;
     height:var( --logo-height );
-    width:var( --logo-width );
     padding:var( --logo-padding );
     margin:var( --logo-margin );
-    background-image:var( --logo-bg-img );
-    background-size: contain;
-    background-repeat: no-repeat;
 }
-.logo>img{display: none;}
+.logo:hover{
+    cursor: pointer;
+}
 .header .row,ul.navbar-nav,ul.navbar-nav>li,.navbar-nav>li>a,.menu-btn{
     display:block;
     height:100% !important;
