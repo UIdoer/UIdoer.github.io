@@ -23,7 +23,9 @@
         /*菜单按钮的粗细：基于 --header-height 来乘这个百分比 */
         --menu-btn-width:10%;
         /*菜单按钮的内边距*/
-        --menu-padding:10px;
+        --menu-btn-padding:10px;
+        /*菜单按钮旋转过渡时间*/
+        --menu-btn-speed:0.2s;
 
         /*LOGO宽度*/
         --logo-width:200px;
@@ -65,6 +67,8 @@
         --banner-bgposition:center bottom;
         /*banner按钮背景*/
         --banner-btn-bg:#fff;
+        /*banner高度*/
+        --banner-height:300px;
 
 
 
@@ -76,8 +80,8 @@
 .banner{
     position: relative;
     // display: block;
-    width:100vw;
-    height:200px;
+    width:100%;
+    height:var( --banner-height );
 }
 
 .banner a{
@@ -94,8 +98,8 @@
         margin:0 auto;
     }
 
-html{
-    font-family: '微软雅黑','Microsoft YaHei',"Helvetica Neue", 'Helvetica';
+html,body{
+    font-family: '微软雅黑','Microsoft YaHei',"Helvetica Neue", 'Helvetica' !important;
     color:var( --color );
 }
 body{
@@ -186,11 +190,11 @@ body{
     width: var( --header-height );
     line-height:var( --header-height );
     text-align: center;
-    padding:var( --menu-padding );
+    padding:var( --menu-btn-padding );
 }
 .menu-btn .line{
     height: var( --menu-btn-width );
-    --margin-top: calc( (( var( --header-height ) - var( --menu-padding ) * 2 ) - var( --menu-btn-width ) * 3 ) / 3 );
+    --margin-top: calc( (( var( --header-height ) - var( --menu-btn-padding ) * 2 ) - var( --menu-btn-width ) * 3 ) / 3 );
     margin-top: calc( var( --margin-top ) - var( --margin-top ) / 6 );
     background-color: var( --menu-btn-color );
 }
@@ -207,10 +211,10 @@ body{
     -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
     -o-transform:rotate(180deg);  /* Opera */
     /*旋转时有过渡动画*/
-    transition: transform 0.2s;
-    -moz-transition: -moz-transform 0.2s;  /* Firefox 4 */
-    -webkit-transition: -webkit-transform 0.2s;   /* Safari 和 Chrome */
-    -o-transition: -o-transform 0.2s;    /* Opera */
+    transition: transform var( --menu-btn-speed );
+    -moz-transition: -moz-transform var( --menu-btn-speed );  /* Firefox 4 */
+    -webkit-transition: -webkit-transform var( --menu-btn-speed );   /* Safari 和 Chrome */
+    -o-transition: -o-transform var( --menu-btn-speed );    /* Opera */
 }
 .open{
     /*当浏览器宽度很小时菜单按钮被点击，按钮旋转180度*/
@@ -220,10 +224,10 @@ body{
     -webkit-transform:rotate(0deg); /* Safari 和 Chrome */
     -o-transform:rotate(0deg);  /* Opera */
     /*旋转时有过渡动画*/
-    transition: transform 0.2s;
-    -moz-transition: -moz-transform 0.2s;  /* Firefox 4 */
-    -webkit-transition: -webkit-transform 0.2s;   /* Safari 和 Chrome */
-    -o-transition: -o-transform 0.2s;    /* Opera */
+    transition: transform var( --menu-btn-speed );
+    -moz-transition: -moz-transform var( --menu-btn-speed );  /* Firefox 4 */
+    -webkit-transition: -webkit-transform var( --menu-btn-speed );   /* Safari 和 Chrome */
+    -o-transition: -o-transform var( --menu-btn-speed );    /* Opera */
 }
 .close .line1{
     transform:rotate(45deg);
@@ -262,7 +266,7 @@ ul.navbar-nav>li>a:focus{
     background-color:var( --nav-focus-bgcolor );
     color:var( --nav-focus-color );
 }
-.tmp-nav{
+.mask{
     background:var( --nav-ms-xs-mask-bgcolor );
     width:100vw;
     height:100vh !important;
@@ -272,16 +276,26 @@ ul.navbar-nav>li>a:focus{
     z-index: 9999999;
 
 }
-.show{
+.nav{
     background:var( --nav-ms-xs-bgcolor );
-    display: block !important;
+    display: block;
     width:var( --nav-ms-xs-width );
     margin:0;
     position:fixed;
     top:var( --header-height );
-    right:0;
     border-top: var( --nav-ms-xs-border-top );
     z-index: 99999999;
+    right:calc( 0px -  var( --nav-ms-xs-width ) );
+    transition: right var( 2s );
+    -moz-transition: right var( 2s );  /* Firefox 4 */
+    -webkit-transition: right var( 2s );   /* Safari 和 Chrome */
+    -o-transition: right var( 2s );
+    display: block !important;
+}
+body>.show{
+
+    right:0;
+
 }
 ul.show>li {
     width:100%;
@@ -297,7 +311,7 @@ ul.show>li a{
     z-index:9;
 }
 .banner .swiper-container{
-    width:100vw;
+    width:100%;
     height: 100%;
     overflow: hidden;
 }

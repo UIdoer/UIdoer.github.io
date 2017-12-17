@@ -24,28 +24,28 @@ $(function(){
     //同时切换菜单的显示与隐藏
 
     $('.menu-btn').click(function(){
-        if(!$('.link').is(':visible')){
+        if( ! $('.link').hasClass('show') ){
             $(this).addClass('close').removeClass('open');
-            var tmp_nav = $('<div>').addClass('tmp-nav').bind('click',function(event){
+            var mask = $('<div>').addClass('mask').bind('click',function(event){
                 event.stopPropagation();
                 $('.menu-btn').before($('.link').removeClass('show'));
-                $('.tmp-nav').remove();
+                $('.mask').remove();
                 $('.close').removeClass('close').addClass('open')
             }).appendTo('body');
             $('.link').addClass('show').appendTo('body');
         }else{
                 $(this).addClass('open').removeClass('close');
                 $('.menu-btn').before($('.link').removeClass('show'));
-                $('.tmp-nav').remove();
+                $('.mask').remove();
         }
     });
 
     //如果窗口大于或等于992，那么将菜单放至menu-btn之前
-    //同时移除tmp-nav，也将menu-btn的close这个类移除
+    //同时移除mask，也将menu-btn的close这个类移除
     $(window).resize(function(){
         if( $(this).width() >= 992 ){
             $('.menu-btn').before($('.link').removeClass('show'));
-            $('.tmp-nav').remove();
+            $('.mask').remove();
             $('.close').removeClass('close')
         }else if($(this).width() < 992){
 
