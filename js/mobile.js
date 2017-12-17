@@ -41,5 +41,6 @@ $(function(){
       }
     }
     launchFullScreen(document.documentElement);
-    alert(navigator.userAgent);
+    // alert(navigator.userAgent);
+    alert($('html'));
 });
