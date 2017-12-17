@@ -101,7 +101,6 @@ html,body{
 body{
     // background-color: #eee;
     background-color:var( --page-bgcolor ) ;
-
 }
 .container{
     width:100%;
@@ -171,11 +170,10 @@ body{
     top:0;
     left:0;
     width:100vw;
-    z-index:99999;
+    z-index:10;
     box-shadow: 0 3px 5px rgba(0,0,0,0.2);
 }
 .logo{
-    display: block;
     height:var( --logo-height );
     padding:var( --logo-padding );
     margin:var( --logo-margin );
@@ -185,7 +183,7 @@ body{
 }
 .header .row,ul.navbar-nav,ul.navbar-nav>li,.navbar-nav>li>a,.menu-btn{
     display:block;
-    height:100% !important;
+    height:100% ;
 
 }
 .menu-btn{
@@ -372,4 +370,12 @@ ul.show>li a{
     .banner{
         display:block;
     }
+}
+.me{
+    width:70vw;
+    height:100vh;
+    background:red;
+    position:fixed;
+    top:0;
+    left:-60vw;
 }
