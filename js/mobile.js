@@ -42,5 +42,5 @@ $(function(){
     }
     launchFullScreen(document.documentElement);
     // alert(navigator.userAgent);
-    alert($('html'));
+    alert($('html').offset().top );
 });
