@@ -15,7 +15,7 @@
         /*头部背景色*/
         --header-bgcolor:#fff;
         /*头部高度*/
-        --header-height:50px;
+        --header-height:70px;
 
         /*浏览器宽度很小时，
         菜单按钮的颜色*/
@@ -27,16 +27,12 @@
         /*菜单按钮旋转过渡时间*/
         --menu-btn-speed:0.2s;
 
-        /*LOGO宽度*/
-        --logo-width:200px;
         /*LOGO高度*/
-        --logo-height:30px;
+        --logo-height:70px;
         /*LOGO内边距*/
-        --logo-padding:0;
+        --logo-padding:10px 0;
         /*LOGO外边距*/
-        --logo-margin:10px 0;
-        /*LOGO背景图*/
-        --logo-bg-img:url(img/logo.png);
+        --logo-margin:0;
 
         /*导航的外边距*/
         --nav-margin:0;
@@ -58,17 +54,17 @@
         --nav-ms-xs-mask-bgcolor:rgba(0,0,0,0.5);
         /*浏览器宽度很小时，导航与header的分割线样式*/
         --nav-ms-xs-border-top:#eee solid 1px;
-        /*浏览器宽度很小时，导航的宽度*/
-        --nav-ms-xs-width:70vw;
         /*浏览器宽度很小时，导航每个链接的高度*/
-        --nav-ms-xs-link-height:15vw;
+        --nav-ms-xs-link-height:10vw;
+        /*浏览器宽度很小时，菜单的宽度*/
+        --nav-ms-xs-width:40vw;
 
         /*banner背景图片定位方式*/
         --banner-bgposition:center bottom;
         /*banner按钮背景*/
         --banner-btn-bg:#fff;
         /*banner高度*/
-        --banner-height:300px;
+        --banner-height:404px;
 
 
 
@@ -80,7 +76,7 @@
 .banner{
     position: relative;
     // display: block;
-    width:100%;
+    width:100vw;
     height:var( --banner-height );
 }
 
@@ -118,7 +114,7 @@ body{
     margin:0;
 }
 
-@media screen and (min-width:1px) and (max-width:1024px){
+@media screen and (min-width:1px) and (max-width:992px){
     .row{
         width:100%;
         // background:red;
@@ -127,24 +123,31 @@ body{
     }
 }
 
-
-@media screen and (min-width:1024px) and (max-width:1366px){
+@media screen and (min-width:992px) and (max-width:1366px){
     .row{
-        width:1000px;
-        // background:blue;
+        width:98% !important;
         padding:0;
         margin:0 auto;
     }
+
 }
-@media screen and (min-width:1366px) and (max-width:1921px){
+
+@media screen and (min-width:1367px) and (max-width:1920px){
     .row{
-        width:1280px;
+        width:84%;
         // background:yellow;
         padding:0;
         margin:0 auto;
     }
 }
-
+@media (min-width:1921px){
+    .row{
+        width:90%;
+        // background:yellow;
+        padding:0;
+        margin:0 auto;
+    }
+}
 li{
     list-style: none;
 }
@@ -171,7 +174,6 @@ body{
     z-index:99999;
     box-shadow: 0 3px 5px rgba(0,0,0,0.2);
 }
-
 .logo{
     display: block;
     height:var( --logo-height );
@@ -276,27 +278,22 @@ ul.navbar-nav>li>a:focus{
     z-index: 9999999;
 
 }
-.nav{
+.show{
     background:var( --nav-ms-xs-bgcolor );
-    display: block;
     width:var( --nav-ms-xs-width );
     margin:0;
     position:fixed;
     top:var( --header-height );
     border-top: var( --nav-ms-xs-border-top );
     z-index: 99999999;
-    right:calc( 0px -  var( --nav-ms-xs-width ) );
+    right:0;
     transition: right var( 2s );
     -moz-transition: right var( 2s );  /* Firefox 4 */
     -webkit-transition: right var( 2s );   /* Safari 和 Chrome */
     -o-transition: right var( 2s );
     display: block !important;
 }
-body>.show{
 
-    right:0;
-
-}
 ul.show>li {
     width:100%;
     height:var( --nav-ms-xs-link-height ) !important;
@@ -308,10 +305,10 @@ ul.show>li a{
 }
 .page{
     margin-top:var( --header-height );
-    z-index:9;
+    z-index: 9;
 }
 .banner .swiper-container{
-    width:100%;
+    width:100vw;
     height: 100%;
     overflow: hidden;
 }
@@ -323,7 +320,6 @@ ul.show>li a{
 .banner .swiper-pagination-bullet{
     background:var( --banner-btn-bg );
 }
-
 .page .row{
     padding:10px;
 }
@@ -365,5 +361,15 @@ ul.show>li a{
         height:420px;
         line-height:420px;
         font-size:10vw;
+    }
+}
+@media all and (orientation : portrait){
+    .banner{
+        display:none;
+    }
+}
+@media all and (orientation : landscape){
+    .banner{
+        display:block;
     }
 }
