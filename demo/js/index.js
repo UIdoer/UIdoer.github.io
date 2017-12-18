@@ -33,11 +33,13 @@ $(function(){
     var menuLeft = parseFloat( $('#menu').css('left') );
     var meLeft   = parseFloat( $('#me').css('left') );
     var LorR = null;
-    $('#page').swipe({
+    var num = 0 ;
+    $('#page,#menu,#me').swipe({
         swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
                 console.log(event.type);
-            if(phase == 'move' &&  direction == 'left'&& distance < asideWidth){
+            if(phase == 'move' &&  direction == 'left'&& distance < asideWidth ){
                 LorR = 'left';
+                num = 1;
                 $('#page,#mask').css({
                     left:pageLeft - distance
                 });
@@ -48,8 +50,9 @@ $(function(){
                     left:meLeft - distance
                 });
                 $('#mask').css({display:'block',background:'rgba(0,0,0,'+0.8 * distance / asideWidth+')'});
-            }else if(phase == 'move' &&  direction == 'right'&& distance < asideWidth){
+            }else if(phase == 'move' &&  direction == 'right'&& distance < asideWidth ){
                 LorR = 'right';
+                num = -1;
                 $('#page,#mask').css({
                     left:pageLeft + distance
                 });
@@ -63,19 +66,30 @@ $(function(){
             }
             if(event.type == 'touchend' ){
                 if(LorR == 'left'){
+                    if(num<=0){num+=1}
+                }else if(LorR == 'right'){
+                    if(num>=0){num-=1}
+                }
+                console.log(num);
+                if(LorR == 'left' && num == 1){
                     $('#page,#mask').animate({
                         left:'-70vw'
                     },100);
                     $('#menu').animate({
                         left:'30vw'
                     },100);
-                }else if(LorR == 'right'){
+                }else if(LorR == 'right' && num == -1){
                     $('#page,#mask').animate({
                         left:'70vw'
                     },100);
                     $('#me').animate({
                         left:'0'
                     },100);
+                }else if(LorR == 'right' && num == 0){
+                    $('#page,#mask').animate({
+                        left:'0'
+                    },100);
+                    $('#mask').animate({background:'rgba(0,0,0,0)'},100).css({display:'none'});
                 }
             }
 
