@@ -62,9 +62,6 @@ $(function(){
                 menuLeft = parseFloat( $('#menu').css('left') );
                 // console.log(pageLeft);
             }
-
-
-
         }
     });
      $('#mask').swipe({
