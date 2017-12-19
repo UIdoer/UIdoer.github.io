@@ -7,47 +7,40 @@ $(function(){
         menuLeft = winW * 0.65,
         LorR = null,
         tmp = -1,
+        menuDisplay = null,
+        IsHeng = false,
         flag = false;
-    var menuDisplay = null;
     $(window).resize(function(){
         winW = $(window).width();
         asideWidth = winW * 0.7;
         menuLeft = winW * 0.7;
         hiddenMenu();
         menuDisplay = null;
-        orientation0or180();
     });
-
-    // 判断设备系统
-   function IsPC(){
-     var userAgentInfo = navigator.platform;
-     var Agents = ["Win32","Windows NT","Windows 2000","Windows XP","Windows 2003","Windows Vista","Windows 7","Mac68K" ,"MacPPC","Macintosh"];
-     var flag = true;
+    //是否是ipad
+   function IsPad(){
+     var userAgentInfo = navigator.userAgent;
+     var Agents = new Array("iPad", "iPod");
+     flag = false;
      for (var v = 0; v < Agents.length; v++) {
-         if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+         if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = true; break; }
      }
      return flag;
     }
-    //Win32 Windows NT Windows 2000 Windows XP Windows 2003 Windows Vista Windows 7 Mac68K Mac68K MacPPC Macintosh
-    //强制竖屏
-    function orientation0or180(){
-        var orn  = window.orientation;
-            if (orn === 180 || orn === 0) {
-                $("#orientation").css({display:'none'});
-            }
-            if (orn === 90 || orn === -90 ){
-                $("#orientation").css({display:'block'});
-            }
+    IsPad();
+    //是否是横屏
+        window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
+        if (window.orientation === 180 || window.orientation === 0) {
+            IsHeng = false;
+            alert('ASFD');
+            $('#orn').css('display','block')}
 
-            if( IsPC() ){
-                alert('pc  '+navigator.platform);
-            }else{
-                alert('phone  '+navigator.platform);
-            }
-
-    }
-
-
+        if (window.orientation === 90 || window.orientation === -90 ){
+            IsHeng = true;
+            alert('ASFD');
+            if(flag){$('#orn').css('display','none')}
+        }
+    }, false);
     //menu 收起
     function hiddenMenu(){
         pageLeft = 0;

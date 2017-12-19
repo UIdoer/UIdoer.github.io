@@ -38,7 +38,7 @@ body{
     width:100vw;
 }
 /*强制竖屏*/
-#orientation{
+#orn{
     width:100vw;
     height:100vh;
     background:#eee;
@@ -47,10 +47,10 @@ body{
     left:0;
 }
 @media screen and (orientation: portrait) {
-    #orientation{display:none;}
+    #orn{display:none;}
 }
 @media screen and (orientation: landscape) {
-    #orientation{display:block;}
+    #orn{display:block;}
 }
 
 .container{
