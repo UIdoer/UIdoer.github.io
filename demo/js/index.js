@@ -114,7 +114,7 @@ $(function(){
     $('#page,#menu').swipe({
         allowPageScroll:'auto',
         swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
-                // console.log(event.type);
+                console.log(event.type);
             if(direction == 'left' || direction == 'right'){
                 LorR = direction;
             }
@@ -125,7 +125,7 @@ $(function(){
             }else if( !IsHeng && event.type == 'touchmove' &&  direction == 'right'&& distance < asideWidth && menuDisplay ){
                 tmp = 1;
                 menuMoveimg(distance);
-        }
+            }
         // console.log(duration);
             if( !IsHeng && event.type == 'touchend' && distance > 15){
                 if(LorR == 'left'){
@@ -153,8 +153,11 @@ $(function(){
     });
      $('#mask').swipe({
         swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
-            // console.log(event.type);
-        if( !IsHeng && ( event.type == 'touchend' || event.type == 'mouseup' ) ){
+            console.log(duration);
+
+        if( !IsHeng && ( event.type == 'touchend' || event.type == 'mouseup'  )  ){
+
+
                 hiddenMenu()
                 menuDisplay = null;
                 $('.line2').css({opacity:1});
