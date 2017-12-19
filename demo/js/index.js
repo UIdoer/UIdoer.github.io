@@ -36,7 +36,11 @@ $(function(){
         $('#menu').css({
             left:menuLeft + tmp * distance /2
         });
-        $('#mask').css({display:'block',background:'rgba(0,0,0,'+0.8 * distance / asideWidth+')'});
+        if(LorR == 'left'){
+            $('#mask').css({display:'block',background:'rgba(0,0,0,'+( 0.8 * distance / asideWidth)+')'});
+        }else{
+            $('#mask').css({display:'block',background:'rgba(0,0,0,'+ (0.8 - distance / asideWidth )+')'});
+        }
     }
     $('#page,#menu').swipe({
         swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
@@ -46,7 +50,8 @@ $(function(){
                 tmp = -1;
                 menuMoveimg(distance);
 
-            }else if( event.type == 'touchmove' &&  direction == 'right'&& distance < asideWidth && menuDisplay ){LorR = 'right';
+            }else if( event.type == 'touchmove' &&  direction == 'right'&& distance < asideWidth && menuDisplay ){
+                LorR = 'right';
                 tmp = 1;
                 menuMoveimg(distance);
         }
