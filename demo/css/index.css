@@ -22,7 +22,7 @@ body{
     width:100vw;
     left:0;
     background:#383838;
-    box-shadow: 10px 0 10px rgba(0,0,0,0.5);
+    box-shadow: 10px 0 10px rgba(0,0,0,0.2);
 }
 #mask{
     width:100vw;
