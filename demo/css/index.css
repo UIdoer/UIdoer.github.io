@@ -31,7 +31,8 @@ body{
     top:0;
     left:0;
     display: none;
-    background:rgba(0,0,0,0);
+    background:rgba(0,0,0,0.5);
+    opacity:1;
 }
 #menu>img,#page>img{
     width:100vw;

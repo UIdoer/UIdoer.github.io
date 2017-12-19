@@ -15,9 +15,11 @@ $(function(){
     //menu 收起
     function hiddenMenu(){
          $('#page,#mask').animate({
-            left:'0'
-        },100);
-        $('#mask').animate({background:'rgba(0,0,0,0)'},100).css({display:'none'});
+            left:0
+        },100,function(){
+            $(this).css({left:0})
+        });
+        $('#mask').animate({opacity:0},100).css({display:'none'});
     }
     //menu 展开
     function showMenu(){
@@ -27,9 +29,11 @@ $(function(){
         $('#menu').animate({
             left:'30vw'
         },100);
+        $('#mask').animate({opacity:1},100).css({display:'block'});
     }
     //menu moveimg
     function menuMoveimg(distance){
+        // console.log();
         $('#page,#mask').css({
             left:pageLeft + tmp * distance
         });
@@ -37,21 +41,20 @@ $(function(){
             left:menuLeft + tmp * distance /2
         });
         if(LorR == 'left'){
-            $('#mask').css({display:'block',background:'rgba(0,0,0,'+( 0.8 * distance / asideWidth)+')'});
+            $('#mask').css({display:'block',opacity:1 * distance / asideWidth});
         }else{
-            $('#mask').css({display:'block',background:'rgba(0,0,0,'+ (0.8 - distance / asideWidth )+')'});
+            $('#mask').css({display:'block',opacity:1 -  distance / asideWidth });
         }
     }
     $('#page,#menu').swipe({
         swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
-                console.log(event.type);
+                // console.log(event.type);
+            LorR = direction;
             if( event.type == 'touchmove' &&  direction == 'left'&& distance < asideWidth && !menuDisplay ){
-                LorR = 'left';
                 tmp = -1;
                 menuMoveimg(distance);
 
             }else if( event.type == 'touchmove' &&  direction == 'right'&& distance < asideWidth && menuDisplay ){
-                LorR = 'right';
                 tmp = 1;
                 menuMoveimg(distance);
         }
@@ -65,13 +68,13 @@ $(function(){
                 }
                 pageLeft = parseFloat( $('#page').css('left') );
                 menuLeft = parseFloat( $('#menu').css('left') );
-                // console.log(pageLeft);
+                console.log(pageLeft);
             }
         }
     });
      $('#mask').swipe({
         swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
-            console.log(event.type);
+            // console.log(event.type);
         if( event.type == 'touchend'  ){
                 hiddenMenu()
         }
