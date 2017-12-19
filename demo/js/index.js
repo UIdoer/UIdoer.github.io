@@ -58,11 +58,11 @@ $(function(){
             if(direction == 'left' || direction == 'right'){
                 LorR = direction;
             }
-            if( duration > 200 && event.type == 'touchmove' &&  direction == 'left'&& distance < asideWidth && !menuDisplay ){
+            if( event.type == 'touchmove' &&  direction == 'left'&& distance < asideWidth && !menuDisplay ){
                 tmp = -1;
                 menuMoveimg(distance);
 
-            }else if( duration > 200 && event.type == 'touchmove' &&  direction == 'right'&& distance < asideWidth && menuDisplay ){
+            }else if( event.type == 'touchmove' &&  direction == 'right'&& distance < asideWidth && menuDisplay ){
                 tmp = 1;
                 menuMoveimg(distance);
         }
