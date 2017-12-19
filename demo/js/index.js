@@ -77,7 +77,7 @@ $(function(){
                    menuDisplay = null;
 
                 }
-                console.log(LorR+' '+menuDisplay);
+                console.log(LorR+'   '+menuDisplay);
 
 
             }
