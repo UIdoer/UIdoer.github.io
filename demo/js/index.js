@@ -17,6 +17,18 @@ $(function(){
         menuDisplay = null;
         orientation0or180();
     });
+
+    // 判断设备系统
+   function IsPC(){
+     var userAgentInfo = navigator.platform;
+     var Agents = ["Win32","Windows NT","Windows 2000","Windows XP","Windows 2003","Windows Vista","Windows 7","Mac68K" ,"MacPPC","Macintosh"];
+     var flag = true;
+     for (var v = 0; v < Agents.length; v++) {
+         if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+     }
+     return flag;
+    }
+    //Win32 Windows NT Windows 2000 Windows XP Windows 2003 Windows Vista Windows 7 Mac68K Mac68K MacPPC Macintosh
     //强制竖屏
     function orientation0or180(){
         var orn  = window.orientation;
@@ -26,16 +38,13 @@ $(function(){
             if (orn === 90 || orn === -90 ){
                 $("#orientation").css({display:'block'});
             }
-         var userAgentInfo = navigator.userAgent;
-            console.log(userAgentInfo);
-            alert(userAgentInfo);
-         var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone","iPad", "iPod");
-         var flag = true;
-         for (var v = 0; v < Agents.length; v++) {
-             if (userAgentInfo.indexOf(Agents[v]) > 0) {
-                flag = false; break; }
-         }
-         return flag;
+
+            if( IsPC() ){
+                alert('pc');
+            }else{
+                alert('phone');
+            }
+
     }
 
 
