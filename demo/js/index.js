@@ -49,7 +49,9 @@ $(function(){
     $('#page,#menu').swipe({
         swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
                 // console.log(event.type);
-            LorR = direction;
+            if(direction == 'left' || direction == 'right'){
+                LorR = direction;
+            }
             if( event.type == 'touchmove' &&  direction == 'left'&& distance < asideWidth && !menuDisplay ){
                 tmp = -1;
                 menuMoveimg(distance);
