@@ -102,6 +102,9 @@ a{text-decoration: none;color:#3399ff;}
     height:30px;
     padding:10px;
 }
+.row .nav{
+    float: right ;
+}
 .nav li{
     float: left;
 }
@@ -112,7 +115,7 @@ a{text-decoration: none;color:#3399ff;}
     padding:0 10px;
     color:#000;
 }
-.nav a.active{
+.nav a.active,#menu .nav a.active{
     background:#000;
     color:#fff;
 }
@@ -120,6 +123,22 @@ a{text-decoration: none;color:#3399ff;}
     background:#444;
     color:#fafafa;
 }
+#menu .nav{
+    clear: both !important;
+}
+#menu .nav li{
+    clear: both;
+    width:100%;
+}
+#menu .nav a{
+    display:block;
+    width:100%;
+    height:50px;
+    line-height:50px;
+    padding:0 10px;
+    color:#000;
+}
+
 .header .row,ul.navbar-nav,ul.navbar-nav>li,.navbar-nav>li>a,.menu-btn{
     display:block;
     height:100% ;

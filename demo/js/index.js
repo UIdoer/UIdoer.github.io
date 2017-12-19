@@ -18,7 +18,18 @@ $(function(){
         menuDisplay = null;
         IsPad();
         orien();
+        reNav(winW);
     });
+
+    function reNav(winw){
+        if(winw > 750){
+            $('.menu-btn').before($('.nav'));
+        }
+        if(winw <= 750 ){
+            $('.nav').appendTo('#menu');
+        }
+    }
+        reNav(winW);
     //是否是ipad
    function IsPad(){
      var userAgentInfo = navigator.userAgent;
