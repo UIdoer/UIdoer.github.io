@@ -42,10 +42,11 @@ $(function(){
             IsHeng = true;
             // alert('heng');
             // alert('not pad');
-                $('#orn').css({'display':'block'})
             if(flag){
             alert('ispad');
                 $('#orn').css({'display':'none'})
+            }else{
+                // $('#orn').css({'display':'block'})
             }
         }
     }
