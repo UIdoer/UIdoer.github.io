@@ -32,12 +32,18 @@ $(function(){
         window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
         if (window.orientation === 180 || window.orientation === 0) {
             IsHeng = false;
-            $('#orn').css('display','none')}
+            $('#orn').css('display','none')
             alert('shu');
+        }
+
         if (window.orientation === 90 || window.orientation === -90 ){
             IsHeng = true;
             alert('heng');
-            if(flag){$('#orn').css('display','none')}
+            alert('not pad');
+            if(flag){
+            alert('ispad');
+                $('#orn').css({'display':'none'})
+            }
         }
     }, false);
     //menu 收起
@@ -85,16 +91,16 @@ $(function(){
             if(direction == 'left' || direction == 'right'){
                 LorR = direction;
             }
-            if( event.type == 'touchmove' &&  direction == 'left'&& distance < asideWidth && !menuDisplay ){
+            if( !IsHeng &&  event.type == 'touchmove' &&  direction == 'left'&& distance < asideWidth && !menuDisplay ){
                 tmp = -1;
                 menuMoveimg(distance);
 
-            }else if( event.type == 'touchmove' &&  direction == 'right'&& distance < asideWidth && menuDisplay ){
+            }else if( !IsHeng && event.type == 'touchmove' &&  direction == 'right'&& distance < asideWidth && menuDisplay ){
                 tmp = 1;
                 menuMoveimg(distance);
         }
         // console.log(duration);
-            if(event.type == 'touchend'  ){
+            if( !IsHeng && event.type == 'touchend'  ){
                 if(LorR == 'left'){
                     showMenu();
                     menuDisplay = '已经展开';
@@ -113,7 +119,7 @@ $(function(){
      $('#mask').swipe({
         swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
             // console.log(event.type);
-        if( event.type == 'touchend' ){
+        if( !IsHeng && event.type == 'touchend' ){
                 hiddenMenu()
                 menuDisplay = null;
                 console.log(LorR+' '+menuDisplay);
