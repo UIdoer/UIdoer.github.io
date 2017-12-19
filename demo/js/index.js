@@ -5,7 +5,7 @@ $(function(){
         asideWidth = winW * 0.7,
         pageLeft = 0,
         menuLeft = winW * 0.65,
-        LorR = null,
+        LorR = 'left',
         tmp = -1,
         menuDisplay = null,
         IsHeng = false,
@@ -76,7 +76,6 @@ $(function(){
             left:'30vw'
         },50);
         $('#mask').animate({opacity:1},50).css({display:'block'});
-        // $('.menu-btn').toggleClass('close')
     }
     //menu moveimg
     function menuMoveimg(distance){

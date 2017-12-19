@@ -132,10 +132,16 @@ a{text-decoration: none;color:#3399ff;}
     text-align: center;
     padding:10px;
 }
+.menu-btn:hover{
+    background:#000;
+}
 .menu-btn .line{
     height: 2px;
     margin-top: 6px;
     background-color: #000;
+}
+.menu-btn:hover .line{
+    background:#fff;
 }
 .close{
     width:30px;
