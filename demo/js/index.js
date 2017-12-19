@@ -16,28 +16,27 @@ $(function(){
         menuLeft = winW * 0.7;
         hiddenMenu();
         menuDisplay = null;
+        IsPad();
     });
     //是否是ipad
    function IsPad(){
      var userAgentInfo = navigator.userAgent;
-     var Agents = new Array("iPad", "iPod");
+     var Agents = new Array("iPad","iPod","Pad","Pod","pad","pod");
      flag = false;
      for (var v = 0; v < Agents.length; v++) {
          if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = true; break; }
      }
-     return flag;
     }
     IsPad();
     //是否是横屏
         window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
         if (window.orientation === 180 || window.orientation === 0) {
             IsHeng = false;
-            alert('ASFD');
-            $('#orn').css('display','block')}
-
+            $('#orn').css('display','none')}
+            alert('shu');
         if (window.orientation === 90 || window.orientation === -90 ){
             IsHeng = true;
-            alert('ASFD');
+            alert('heng');
             if(flag){$('#orn').css('display','none')}
         }
     }, false);
