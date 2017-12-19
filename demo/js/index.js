@@ -40,9 +40,9 @@ $(function(){
             }
 
             if( IsPC() ){
-                alert('pc');
+                alert('pc  '+navigator.platform);
             }else{
-                alert('phone');
+                alert('phone  '+navigator.platform);
             }
 
     }
