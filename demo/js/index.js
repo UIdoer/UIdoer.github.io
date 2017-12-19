@@ -46,7 +46,7 @@ $(function(){
             alert('ispad');
                 $('#orn').css({'display':'none'})
             }else{
-                // $('#orn').css({'display':'block'})
+                $('#orn').css({'display':'block'})
             }
         }
     }
@@ -58,11 +58,12 @@ $(function(){
         menuLeft = winW * 0.65;
          $('#page,#mask').animate({
             left:0
-        },100,function(){
+        },50,function(){
             $('#page').css({left:0})
             $('#menu').css({left:winW * 0.65})
         });
-        $('#mask').animate({opacity:0},100).css({display:'none'});
+        $('#mask').animate({opacity:0},50).css({display:'none'});
+        $('.menu-btn').toggleClass('close')
     }
     //menu 展开
     function showMenu(){
@@ -70,11 +71,12 @@ $(function(){
         menuLeft = winW * 0.3;
         $('#page,#mask').animate({
             left:'-70vw'
-        },100);
+        },50);
         $('#menu').animate({
             left:'30vw'
-        },100);
-        $('#mask').animate({opacity:1},100).css({display:'block'});
+        },50);
+        $('#mask').animate({opacity:1},50).css({display:'block'});
+        // $('.menu-btn').toggleClass('close')
     }
     //menu moveimg
     function menuMoveimg(distance){
@@ -86,12 +88,19 @@ $(function(){
             left:menuLeft + tmp * distance /2
         });
         if(LorR == 'left'){
+            $('.menu-btn').removeClass('open')
             $('#mask').css({display:'block',opacity:1 * distance / asideWidth});
+            $('.line1').css({'transform':'rotate('+45*distance / asideWidth+'deg)',top:8*distance / asideWidth+'px',position: 'relative'});
+            $('.line3').css({'transform':'rotate('+-45*distance / asideWidth+'deg)',bottom:8*distance / asideWidth+'px',position: 'relative'});
         }else{
+            $('.menu-btn').removeClass('close').addClass('open')
             $('#mask').css({display:'block',opacity:1 -  distance / asideWidth });
+           $('.line1').css({'transform':'rotate('+(45-45*distance / asideWidth)+'deg)',top:8*distance / asideWidth+'px',position: 'relative'});
+            $('.line3').css({'transform':'rotate('+(45-45*distance / asideWidth)+'deg)',bottom:8*distance / asideWidth+'px',position: 'relative'});
         }
     }
     $('#page,#menu').swipe({
+        allowPageScroll:'auto',
         swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
                 // console.log(event.type);
             if(direction == 'left' || direction == 'right'){
@@ -106,32 +115,80 @@ $(function(){
                 menuMoveimg(distance);
         }
         // console.log(duration);
-            if( !IsHeng && event.type == 'touchend'  ){
+            if( !IsHeng && event.type == 'touchend' && distance > 15){
                 if(LorR == 'left'){
                     showMenu();
                     menuDisplay = '已经展开';
-
+                    $('.line1').css({'transform':'',top:'',position: ''});
+                    $('.line3').css({'transform':'',top:'',position: ''});
+                    $('.menu-btn').removeClass('open').addClass('close')
                 }else if(LorR == 'right'){
                    hiddenMenu();
                    menuDisplay = null;
-
+                   $('.line1').css({'transform':'rotate(0deg)',top:'',position: ''});
+                    $('.line3').css({'transform':'rotate(0deg)',top:'',position: ''});
+                    $('.menu-btn').removeClass('close').addClass('open')
                 }
+
                 console.log(LorR+'   '+menuDisplay);
 
 
             }
-        }
+        },
+
     });
      $('#mask').swipe({
         swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
             // console.log(event.type);
-        if( !IsHeng && event.type == 'touchend' ){
+        if( !IsHeng && ( event.type == 'touchend' || event.type == 'mouseup' ) ){
                 hiddenMenu()
                 menuDisplay = null;
                 console.log(LorR+' '+menuDisplay);
 
         }
     }});
+     //导航
+     $('.nav a').click(function(){
+        $('.nav a').removeClass('active');
+        $(this).addClass('active')
+     });
+     // banner
+    var swiper = new Swiper('.swiper-container',{
+        spaceBetween: 30,
+        speed:200,
+        loop:true,
+        pagination:{
+            el: '.swiper-pagination',
+            dynamicBullets: true,
+        },
+        slidesPerView : 1,
+        spaceBetween : 0,
+        autoplay: {
+            delay: 3000,
+            stopOnLastSlide: false,
+            disableOnInteraction: true,
+        },
+        autoplayDisableOnInteraction : false,
+    });
 
-
+    $('.menu-btn').swipe({
+        swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
+            // console.log(event.type);
+        if( !IsHeng && ( event.type == 'touchend' || event.type == 'mouseup' )){
+                if(LorR == 'left'){
+                    showMenu();
+                    menuDisplay = '已经展开';
+                    $('.line1').css({'transform':'',top:'',position: ''});
+                    $('.line3').css({'transform':'',top:'',position: ''});
+                    $('.menu-btn').removeClass('open').addClass('close')
+                }else if(LorR == 'right'){
+                   hiddenMenu();
+                   menuDisplay = null;
+                   $('.line1').css({'transform':'rotate(0deg)',top:'',position: ''});
+                    $('.line3').css({'transform':'rotate(0deg)',top:'',position: ''});
+                    $('.menu-btn').removeClass('close').addClass('open')
+                }
+        }
+    }
+    });
 });

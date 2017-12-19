@@ -32,7 +32,7 @@ $(function(){
                 $('.mask').remove();
                 $('.close').removeClass('close').addClass('open')
             }).appendTo('body');
-            $('.link').addClass('show').appendTo('body');
+            $('.link').addClass('show').appendTo('#menu');
         }else{
                 $(this).addClass('open').removeClass('close');
                 $('.menu-btn').before($('.link').removeClass('show'));

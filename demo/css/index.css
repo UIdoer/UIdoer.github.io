@@ -1,12 +1,19 @@
 *{
     margin:0;
     padding: 0;
+    color:#333;
+    font-size:12px;
 }
 body{
     width:100vw;
     height:100vh;
+    background:#f2f2f2;
     overflow:hidden;
 }
+li{list-style: none;}
+a{text-decoration: none;color:#3399ff;}
+.fl{float: left}
+.fr{float: right;}
 #page,#menu{
     height:100vh;
     position: fixed;
@@ -54,33 +61,147 @@ body{
 }
 .row{
     margin:0 auto;
+    background:red;
 }
-@media screen and (min-width:1px) and (max-width:992px){
+.hidden-xs,.hidden-sm{display: block;}
+@media screen and (min-width:1px) and (max-width:750px){
     .row{
         width:100%;
         margin:0;
     }
+    .hidden-xs,.hidden-sm{display: none;}
+    .visible-xs,.visible-sm{display: block;}
 }
 
-@media screen and (min-width:992px) and (max-width:1366px){
+@media screen and (min-width:750px) and (max-width:1366px){
     .row{
-        width:98% !important;
+        width:90% !important;
     }
+.visible-xs,.visible-sm{display: none !important;}
 
 }
 
 @media screen and (min-width:1367px) and (max-width:1920px){
     .row{
-        width:84%;
+        width:80%;
     }
+.visible-xs,.visible-sm{display: none !important;}
 }
 @media (min-width:1921px){
     .row{
-        width:90%;
+        width:75%;
     }
+.visible-xs,.visible-sm{display: none !important;}
 }
 
-.header{
+.header,.header .row{
     background:#fff;
-    height:70px;
+    height:50px;
 }
+.logo{
+    height:30px;
+    padding:10px;
+}
+.nav li{
+    float: left;
+}
+.nav a{
+    display:inline-block;
+    height:50px;
+    line-height:50px;
+    padding:0 10px;
+    color:#000;
+}
+.nav a.active{
+    background:#000;
+    color:#fff;
+}
+.nav a:hover{
+    background:#444;
+    color:#fafafa;
+}
+.header .row,ul.navbar-nav,ul.navbar-nav>li,.navbar-nav>li>a,.menu-btn{
+    display:block;
+    height:100% ;
+
+}
+.menu-btn{
+    width: 30px;
+    height:30px;
+    line-height:30px;
+    text-align: center;
+    padding:10px;
+}
+.menu-btn .line{
+    height: 2px;
+    margin-top: 6px;
+    background-color: #000;
+}
+.close{
+    width:30px;
+    height:30px !important;
+    /*当浏览器宽度很小时菜单按钮被点击，按钮旋转180度*/
+    transform:rotate(180deg);     /* IE 9 */
+    -ms-transform:rotate(180deg);     /* IE 9 */
+    -moz-transform:rotate(180deg);    /* Firefox */
+    -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+    -o-transform:rotate(180deg);  /* Opera */
+    /*旋转时有过渡动画*/
+    transition: transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;  /* Firefox 4 */
+    -webkit-transition: -webkit-transform 0.2s;   /* Safari 和 Chrome */
+    -o-transition: -o-transform 0.2s;    /* Opera */
+}
+.open{
+
+    /*当浏览器宽度很小时菜单按钮被点击，按钮旋转180度*/
+    transform:rotate(0deg) !important;     /* IE 9 */
+    -ms-transform:rotate(0deg) !important;     /* IE 9 */
+    -moz-transform:rotate(0deg) !important;    /* Firefox */
+    -webkit-transform:rotate(0deg) !important; /* Safari 和 Chrome */
+    -o-transform:rotate(0deg) !important;  /* Opera */
+    /*旋转时有过渡动画*/
+    transition: transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;  /* Firefox 4 */
+    -webkit-transition: -webkit-transform 0.2s;   /* Safari 和 Chrome */
+    -o-transition: -o-transform 0.2s;    /* Opera */
+}
+.close .line1{
+    transform:rotate(45deg) !important;
+    /*旋转菜单按钮的第一根线*/
+    -ms-transform:rotate(45deg) !important;     /* IE 9 */
+    -moz-transform:rotate(45deg) !important;    /* Firefox */
+    -webkit-transform:rotate(45deg) !important; /* Safari 和 Chrome */
+    -o-transform:rotate(45deg) !important;  /* Opera */
+    position: relative !important;
+    top:8px !important;
+}
+.close .line2{
+    /*隐藏菜单按钮的第二根线*/
+    opacity: 0;
+}
+.close .line3{
+    transform:rotate(-45deg) !important;
+    /*旋转菜单按钮的第三根线*/
+    -ms-transform:rotate(-45deg) !important;     /* IE 9 */
+    -moz-transform:rotate(-45deg) !important;    /* Firefox */
+    -webkit-transform:rotate(-45deg) !important; /* Safari 和 Chrome */
+    -o-transform:rotate(-45deg !important);  /* Opera */
+    position: relative !important;
+    bottom:8px !important;
+}
+/*浏览器宽度很大时，banner高度和显示隐藏*/
+.banner{
+    position:relative;
+    width:100vw;
+    height:300px;
+}
+
+.banner a{
+    display:inline-block;
+    width:100%;
+    height:300px;
+    background-position: center center !important;
+}
+.swiper-pagination-bullet{background:rgba(255,255,255,0.8);width:10px !important;height:10px !important;}
+.swiper-pagination-bullet-active{background:#fff;}
