@@ -37,3 +37,18 @@ body{
 #menu>img,#page>img{
     width:100vw;
 }
+/*强制竖屏*/
+#orientation{
+    width:100vw;
+    height:100vh;
+    background:#eee;
+    position:fixed;
+    top:0;
+    left:0;
+}
+@media screen and (orientation: portrait) {
+    #orientation{display:none;}
+}
+@media screen and (orientation: landscape) {
+    #orientation{display:block;}
+}
