@@ -2,23 +2,106 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" name="viewport" />
     <title>UIdoer</title>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="icon" href="img/titleImg.png" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="css/loading.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" id="style">
     <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/jquery.nicescroll.js"></script>
+    <script src="js/wow.min.js"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>
-    <script src="js/index.js"></script>
+    <script>
+        if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+            new WOW().init();
+        };
+    </script>
+    <script id="script"></script>
+    <script src="js/loading.js"></script>
+    <script src="js/changeStyle.js"></script>
+
 </head>
-<body>
-        <div id="menu"><img src="img/menu.jpg" alt=""></div>
-        <div id="page">
-            <div class="header container">
-                <div class="row">
-                    <img src="img/logo.png" class="logo" />
+<body class="force-overflow">
+
+    <div class="container header">
+        <div class="row">
+                <img src="img/logo.png"  onclick="javascript:window.location.href='https://uidoer.github.io/'" class="logo fl">
+                <ul class="link fr nav navbar-nav hidden-xs hidden-sm">
+                    <li> <a href="#" class="active">11111</a></li>
+                    <li> <a href="#">11111</a></li>
+                    <li> <a href="#">11111 </a></li>
+                    <li> <a href="#">11111</a></li>
+                </ul>
+        <div class="menu-btn visible-xs visible-sm fr">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+        </div>
+        </div>
+
+    </div>
+
+    <!-- page -->
+    <div class="container page">
+        <!-- banner -->
+        <div class="banner hidden-xs">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><a href="#" style="background:url(img/banner-01.png);"></a></div>
+                  <div class="swiper-slide"><a href="#" style="background:url(img/banner-02.png);"></a></div>
+                  <div class="swiper-slide"><a href="#" style="background:url(img/banner-03.png);"></a></div>
+                </div>
+                <div class="swiper-pagination">
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
                 </div>
             </div>
+        </div>
+        <script src="js/swiper.min.js"></script>
+        <div class="row">
+            <div class="col-md-8 col-lg-8 col-xs-12 content-wrap">
+                <div class="fl content ">
+                    <div>设</div>
+                    <div>计</div>
+                    <div>路</div>
+                    <div>上</div>
+                </div>
+                <div class="fr content">
+                    <div>与</div>
+                    <div>君</div>
+                    <div>共</div>
+                    <div>勉</div>
+                </div>
+            </div>
+            <div class=" col-md-4 col-lg-4 hidden-xs hidden-sm aside">
+                <div class=" ">
+                    af
+                </div>
+            </div>
+        </div>
     </div>
-        <div id="mask"></div>
-        <div id="orientation"></div>
+
+    <div class="me">
+
+    </div>
+    <div id="loading">
+        <div class="loading">
+                <span class="child7"></span>
+                <span class="child8"></span>
+                <span class="child9"></span>
+                <span class="child10"></span>
+                <span class="child11"></span>
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
+    <div id="mask">
+
+    </div>
 </body>
 </html>

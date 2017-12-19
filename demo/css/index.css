@@ -21,7 +21,7 @@ body{
 #page{
     width:100vw;
     left:0;
-    background:#383838;
+    background:#f2f2f2;
     box-shadow: 10px 0 10px rgba(0,0,0,0.2);
 }
 #mask{
@@ -51,4 +51,40 @@ body{
 }
 @media screen and (orientation: landscape) {
     #orientation{display:block;}
+}
+
+.container{
+    width:100%;
+}
+.row{
+    margin:0 auto;
+}
+@media screen and (min-width:1px) and (max-width:992px){
+    .row{
+        width:100%;
+        margin:0;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1366px){
+    .row{
+        width:98% !important;
+    }
+
+}
+
+@media screen and (min-width:1367px) and (max-width:1920px){
+    .row{
+        width:84%;
+    }
+}
+@media (min-width:1921px){
+    .row{
+        width:90%;
+    }
+}
+
+.header{
+    background:#fff;
+    height:70px;
 }
