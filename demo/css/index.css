@@ -53,6 +53,11 @@ a{text-decoration: none;color:#3399ff;}
     top:0;
     left:0;
     display:none;
+    color:#fff;
+    text-shadow: 0 3px 5px rgba(0,0,0,0.2);
+    font-size:5vw;
+    line-height: 100vh;
+    text-align: center;
 }
 
 
