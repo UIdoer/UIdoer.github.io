@@ -91,11 +91,13 @@ $(function(){
             $('.menu-btn').removeClass('open')
             $('#mask').css({display:'block',opacity:1 * distance / asideWidth});
             $('.line1').css({'transform':'rotate('+45*distance / asideWidth+'deg)',top:8*distance / asideWidth+'px',position: 'relative'});
+            $('.line2').css({opacity:1 - distance / asideWidth});
             $('.line3').css({'transform':'rotate('+-45*distance / asideWidth+'deg)',bottom:8*distance / asideWidth+'px',position: 'relative'});
         }else{
             $('.menu-btn').removeClass('close').addClass('open')
             $('#mask').css({display:'block',opacity:1 -  distance / asideWidth });
            $('.line1').css({'transform':'rotate('+(45-45*distance / asideWidth)+'deg)',top:8*distance / asideWidth+'px',position: 'relative'});
+            $('.line2').css({opacity:1 * distance / asideWidth});
             $('.line3').css({'transform':'rotate('+(45-45*distance / asideWidth)+'deg)',bottom:8*distance / asideWidth+'px',position: 'relative'});
         }
     }
@@ -120,12 +122,14 @@ $(function(){
                     showMenu();
                     menuDisplay = '已经展开';
                     $('.line1').css({'transform':'',top:'',position: ''});
+                    $('.line2').css({opacity:0});
                     $('.line3').css({'transform':'',top:'',position: ''});
                     $('.menu-btn').removeClass('open').addClass('close')
                 }else if(LorR == 'right'){
                    hiddenMenu();
                    menuDisplay = null;
                    $('.line1').css({'transform':'rotate(0deg)',top:'',position: ''});
+                    $('.line2').css({opacity:1});
                     $('.line3').css({'transform':'rotate(0deg)',top:'',position: ''});
                     $('.menu-btn').removeClass('close').addClass('open')
                 }
@@ -143,6 +147,8 @@ $(function(){
         if( !IsHeng && ( event.type == 'touchend' || event.type == 'mouseup' ) ){
                 hiddenMenu()
                 menuDisplay = null;
+                $('.line2').css({opacity:1});
+
                 console.log(LorR+' '+menuDisplay);
 
         }
@@ -179,12 +185,14 @@ $(function(){
                     showMenu();
                     menuDisplay = '已经展开';
                     $('.line1').css({'transform':'',top:'',position: ''});
+                    $('.line2').css({'opacity':'0'});
                     $('.line3').css({'transform':'',top:'',position: ''});
                     $('.menu-btn').removeClass('open').addClass('close')
                 }else if(LorR == 'right'){
                    hiddenMenu();
                    menuDisplay = null;
                    $('.line1').css({'transform':'rotate(0deg)',top:'',position: ''});
+                    $('.line2').css({'opacity':'1'});
                     $('.line3').css({'transform':'rotate(0deg)',top:'',position: ''});
                     $('.menu-btn').removeClass('close').addClass('open')
                 }
