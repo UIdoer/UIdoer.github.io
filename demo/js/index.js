@@ -67,7 +67,7 @@ $(function(){
                 menuMoveimg(distance);
         }
         // console.log(duration);
-            if(event.type == 'touchend' && duration > 200){
+            if(event.type == 'touchend' ){
                 if(LorR == 'left'){
                     showMenu();
                     menuDisplay = '已经展开';
