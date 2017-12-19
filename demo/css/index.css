@@ -7,19 +7,15 @@ body{
     height:100vh;
     overflow:hidden;
 }
-#me,#page,#menu{
+#page,#menu{
     height:100vh;
     position: fixed;
     top:0;
 }
-#me{
-    width: 70vw;
-    left:-70vw;
-    background: #ccc;
-}
+
 #menu{
     width: 70vw;
-    left:100vw;
+    left:65vw;
     background: #bbb;
 }
 #page{
@@ -36,9 +32,4 @@ body{
     display: none;
     background:rgba(0,0,0,0);
 }
-.tran{
-    // transition: left 0.5s;
-    // -moz-transition: left 0.5s;
-    // -webkit-transition: left 0.5s;
-    // -o-transition: left 0.5s;
-}
+
