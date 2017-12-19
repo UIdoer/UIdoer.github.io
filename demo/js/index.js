@@ -1,28 +1,34 @@
 $(function(){
     var page = $('#page'),
         menu = $('#menu'),
-        winW = $(window).width();
-    var asideWidth = winW * 0.7;
+        winW = $(window).width(),
+        asideWidth = winW * 0.7,
+        pageLeft = 0,
+        menuLeft = winW * 0.65,
+        LorR = null,
+        tmp = -1;
+    var menuDisplay = null;
     $(window).resize(function(){
         winW = $(window).width();
         asideWidth = winW * 0.7;
+        menuLeft = winw * 0.7;
     });
-    var pageLeft = parseFloat( $('#page').css('left') );
-    var menuLeft = parseFloat( $('#menu').css('left') );
-    var LorR = null;
-    var tmp = -1;
-    var menuDisplay = null;
     //menu 收起
     function hiddenMenu(){
+        pageLeft = 0;
+        menuLeft = winW * 0.65;
          $('#page,#mask').animate({
             left:0
         },100,function(){
-            $(this).css({left:0})
+            $('#page').css({left:0})
+            $('#menu').css({left:winW * 0.65})
         });
         $('#mask').animate({opacity:0},100).css({display:'none'});
     }
     //menu 展开
     function showMenu(){
+        pageLeft = - winW * 0.7;
+        menuLeft = winW * 0.3;
         $('#page,#mask').animate({
             left:'-70vw'
         },100);
@@ -52,25 +58,28 @@ $(function(){
             if(direction == 'left' || direction == 'right'){
                 LorR = direction;
             }
-            if( event.type == 'touchmove' &&  direction == 'left'&& distance < asideWidth && !menuDisplay ){
+            if( duration > 200 && event.type == 'touchmove' &&  direction == 'left'&& distance < asideWidth && !menuDisplay ){
                 tmp = -1;
                 menuMoveimg(distance);
 
-            }else if( event.type == 'touchmove' &&  direction == 'right'&& distance < asideWidth && menuDisplay ){
+            }else if( duration > 200 && event.type == 'touchmove' &&  direction == 'right'&& distance < asideWidth && menuDisplay ){
                 tmp = 1;
                 menuMoveimg(distance);
         }
-            if(event.type == 'touchend' ){
+        // console.log(duration);
+            if(event.type == 'touchend' && duration > 200){
                 if(LorR == 'left'){
                     showMenu();
                     menuDisplay = '已经展开';
+
                 }else if(LorR == 'right'){
                    hiddenMenu();
                    menuDisplay = null;
+
                 }
-                pageLeft = parseFloat( $('#page').css('left') );
-                menuLeft = parseFloat( $('#menu').css('left') );
-                console.log(pageLeft);
+                console.log(LorR+' '+menuDisplay);
+
+
             }
         }
     });
@@ -79,6 +88,9 @@ $(function(){
             // console.log(event.type);
         if( event.type == 'touchend'  ){
                 hiddenMenu()
+                menuDisplay = null;
+                console.log(LorR+' '+menuDisplay);
+
         }
     }});
 
