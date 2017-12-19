@@ -17,6 +17,7 @@ $(function(){
         hiddenMenu();
         menuDisplay = null;
         IsPad();
+        orien();
     });
     //是否是ipad
    function IsPad(){
@@ -29,23 +30,27 @@ $(function(){
     }
     IsPad();
     //是否是横屏
-        window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
+    console.log(window.orientation);
+    function orien(){
         if (window.orientation === 180 || window.orientation === 0) {
             IsHeng = false;
             $('#orn').css('display','none')
-            alert('shu');
+            // alert('shu');
         }
 
         if (window.orientation === 90 || window.orientation === -90 ){
             IsHeng = true;
-            alert('heng');
-            alert('not pad');
+            // alert('heng');
+            // alert('not pad');
+                $('#orn').css({'display':'block'})
             if(flag){
             alert('ispad');
                 $('#orn').css({'display':'none'})
             }
         }
-    }, false);
+    }
+    orien();
+
     //menu 收起
     function hiddenMenu(){
         pageLeft = 0;
