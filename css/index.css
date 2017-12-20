@@ -67,7 +67,6 @@ a{text-decoration: none;color:#3399ff;}
 }
 .row{
     margin:0 auto;
-    background:red;
 }
 .hidden-xs,.hidden-sm{display: block;}
 @media screen and (min-width:1px) and (max-width:750px){
@@ -99,10 +98,25 @@ a{text-decoration: none;color:#3399ff;}
     }
 .visible-xs,.visible-sm{display: none !important;}
 }
-
+#page>.row{
+    background:#fff;
+}
+.header{
+    box-shadow:0 3px 5px rgba(0,0,0,0.2);
+}
 .header,.header .row{
     background:#fff;
     height:50px;
+}
+.fixedHead{
+    position:fixed;
+    top:0;
+    top:0;
+    width:100vw;
+    height:50px;
+}
+.scrollPageTop{
+    margin-top:50px;
 }
 .logo{
     height:30px;
@@ -217,7 +231,6 @@ a{text-decoration: none;color:#3399ff;}
     /*隐藏菜单按钮的第二根线*/
     opacity: 0;
 }
-body .line3{background:red;}
 .close .line3{
 
     transform:rotate(-45deg) !important;
