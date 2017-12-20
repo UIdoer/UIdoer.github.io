@@ -158,21 +158,7 @@ $(function(){
         },
 
     });
-     $('#mask').swipe({
-        swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
-            console.log(duration);
 
-        if( !IsHeng && ( event.type == 'touchend' || event.type == 'mouseup'  )  ){
-
-
-                hiddenMenu()
-                menuDisplay = null;
-                $('.line2').css({opacity:1});
-
-                console.log(LorR+' '+menuDisplay);
-
-        }
-    }});
      //导航
      $('.nav a').click(function(){
         $('.nav a').removeClass('active');
