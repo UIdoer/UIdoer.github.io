@@ -111,7 +111,7 @@ $(function(){
             $('.line3').css({'transform':'rotate('+(45*distance / asideWidth-45)+'deg)',bottom:16*distance / asideWidth+'px',position: 'relative'});
         }
     }
-    $('#page,#menu,#mask').swipe({
+    $('#page,#page .row,#menu,#mask').swipe({
         swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
                 // console.log(event.type);
             if(direction == 'left' || direction == 'right'){

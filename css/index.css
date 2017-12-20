@@ -30,7 +30,7 @@ a{text-decoration: none;color:#3399ff;}
     left:0;
     background:#f2f2f2;
     box-shadow: 10px 0 10px rgba(0,0,0,0.2);
-    // overflow-y: scroll;
+    overflow-y: scroll;
 }
 #mask{
     width:100vw;
