@@ -119,7 +119,6 @@ $(function(){
     $('#page,#menu,#mask').swipe({
         swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
                 // console.log(event.type);
-                $('#ascrail2000-hr,#ascrail2000').css({display:'none'});
             if(direction == 'left' || direction == 'right'){
                 LorR = direction;
             }
@@ -149,13 +148,11 @@ $(function(){
                     $('.menu-btn').removeClass('close').addClass('open')
                 }
                 // console.log(LorR+'   '+menuDisplay);
-                $('#ascrail2000-hr,#ascrail2000').css({display:'block'});
 
             }else if( !IsHeng && ( event.type == 'touchend' || event.type == 'mouseup' ) && $(this).attr('id') == 'mask' ){
                 hiddenMenu()
                 menuDisplay = null;
                 $('.line2').css({opacity:1});
-                $('#ascrail2000-hr,#ascrail2000').css({display:'block'});
             }
         },
         allowPageScroll:'auto',
@@ -197,7 +194,6 @@ $(function(){
                     $('.line2').css({'opacity':'0'});
                     $('.line3').css({'transform':'',top:'',position: ''});
                     $('.menu-btn').removeClass('open').addClass('close')
-                    $('#ascrail2000-hr,#ascrail2000').css({display:'block'});
                 }else if(LorR == 'right'){
                    hiddenMenu();
                    menuDisplay = null;
@@ -205,7 +201,6 @@ $(function(){
                     $('.line2').css({'opacity':'1'});
                     $('.line3').css({'transform':'rotate(0deg)',top:'',position: ''});
                     $('.menu-btn').removeClass('close').addClass('open')
-                    $('#ascrail2000-hr,#ascrail2000').css({display:'block'});
                 }
 
         }
@@ -220,7 +215,7 @@ $(function(){
         touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备
         cursorwidth: "4px", //像素光标的宽度
         cursorborder: "0", //   游标边框css定义
-        cursorborderradius: "5px",//以像素为光标边界半径
+        cursorborderradius: "1px",//以像素为光标边界半径
         autohidemode: false //是否隐藏滚动条
     });
 
