@@ -74,11 +74,12 @@ $(function(){
          $('#page,#mask').animate({
             left:0
         },50,function(){
-            $('#page').css({left:0})
-            $('#menu').css({left:winW * 0.65})
+            $('#page').css({left:0});
+            $('#menu').css({left:winW * 0.65});
         });
         $('#mask').animate({opacity:0},50).css({display:'none'});
-        $('.menu-btn').toggleClass('close')
+        $('.menu-btn').toggleClass('close');
+
     }
     //menu 展开
     function showMenu(){
@@ -118,6 +119,7 @@ $(function(){
     $('#page,#menu,#mask').swipe({
         swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
                 // console.log(event.type);
+                $('#ascrail2000-hr,#ascrail2000').css({display:'none'});
             if(direction == 'left' || direction == 'right'){
                 LorR = direction;
             }
@@ -146,14 +148,14 @@ $(function(){
                     $('.line3').css({'transform':'rotate(0deg)',top:'',position: ''});
                     $('.menu-btn').removeClass('close').addClass('open')
                 }
-
                 // console.log(LorR+'   '+menuDisplay);
-
+                $('#ascrail2000-hr,#ascrail2000').css({display:'block'});
 
             }else if( !IsHeng && ( event.type == 'touchend' || event.type == 'mouseup' ) && $(this).attr('id') == 'mask' ){
                 hiddenMenu()
                 menuDisplay = null;
                 $('.line2').css({opacity:1});
+                $('#ascrail2000-hr,#ascrail2000').css({display:'block'});
             }
         },
         allowPageScroll:'auto',
@@ -195,6 +197,7 @@ $(function(){
                     $('.line2').css({'opacity':'0'});
                     $('.line3').css({'transform':'',top:'',position: ''});
                     $('.menu-btn').removeClass('open').addClass('close')
+                    $('#ascrail2000-hr,#ascrail2000').css({display:'block'});
                 }else if(LorR == 'right'){
                    hiddenMenu();
                    menuDisplay = null;
@@ -202,7 +205,9 @@ $(function(){
                     $('.line2').css({'opacity':'1'});
                     $('.line3').css({'transform':'rotate(0deg)',top:'',position: ''});
                     $('.menu-btn').removeClass('close').addClass('open')
+                    $('#ascrail2000-hr,#ascrail2000').css({display:'block'});
                 }
+
         }
     }
     });
