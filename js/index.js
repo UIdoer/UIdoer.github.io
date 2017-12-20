@@ -106,9 +106,9 @@ $(function(){
         }else{
             $('.menu-btn').removeClass('close').addClass('open')
             $('#mask').css({display:'block',opacity:1 -  distance / asideWidth });
-           $('.line1').css({'transform':'rotate('+(45-45*distance / asideWidth)+'deg)',top:8*distance / asideWidth+'px',position: 'relative'});
+           $('.line1').css({'transform':'rotate('+(45*distance / asideWidth)+'deg)',top:8*distance / asideWidth+'px',position: 'relative'});
             $('.line2').css({opacity:1 * distance / asideWidth});
-            $('.line3').css({'transform':'rotate('+(45-45*distance / asideWidth)+'deg)',bottom:8*distance / asideWidth+'px',position: 'relative'});
+            $('.line3').css({'transform':'rotate('+(-45*distance / asideWidth )+'deg)',bottom:8*distance / asideWidth+'px',position: 'relative'});
         }
     }
     $('#page,#menu,#mask').swipe({
