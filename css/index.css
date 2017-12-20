@@ -38,7 +38,7 @@ a{text-decoration: none;color:#3399ff;}
     top:0;
     left:0;
     display: none;
-    background:rgba(0,0,0,0.5);
+    background:rgba(0,0,20,0.4);
     opacity:1;
 }
 #menu>img,#page>img{
@@ -210,7 +210,9 @@ a{text-decoration: none;color:#3399ff;}
     /*隐藏菜单按钮的第二根线*/
     opacity: 0;
 }
+body .line3{background:red;}
 .close .line3{
+
     transform:rotate(-45deg) !important;
     /*旋转菜单按钮的第三根线*/
     -ms-transform:rotate(-45deg) !important;     /* IE 9 */

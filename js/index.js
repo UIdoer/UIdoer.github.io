@@ -106,15 +106,15 @@ $(function(){
         }else{
             $('.menu-btn').removeClass('close').addClass('open')
             $('#mask').css({display:'block',opacity:1 -  distance / asideWidth });
-           $('.line1').css({'transform':'rotate('+(45*distance / asideWidth)+'deg)',top:8*distance / asideWidth+'px',position: 'relative'});
+           $('.line1').css({'transform':'rotate('+(45-45*distance / asideWidth)+'deg)',top:-distance / asideWidth+'px',position: 'relative'});
             $('.line2').css({opacity:1 * distance / asideWidth});
-            $('.line3').css({'transform':'rotate('+(-45*distance / asideWidth )+'deg)',bottom:8*distance / asideWidth+'px',position: 'relative'});
+            $('.line3').css({'transform':'rotate('+(45*distance / asideWidth-45)+'deg)',bottom:-distance / asideWidth+'px',position: 'relative'});
         }
     }
     $('#page,#menu,#mask').swipe({
         allowPageScroll:'auto',
         swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
-                console.log(event.type);
+                // console.log(event.type);
             if(direction == 'left' || direction == 'right'){
                 LorR = direction;
             }
@@ -128,7 +128,6 @@ $(function(){
             }
         // console.log(duration);
             if( !IsHeng && event.type == 'touchend' && distance > 15){
-                console.log($(this))
                 if(LorR == 'left'){
                     showMenu();
                     menuDisplay = '已经展开';
@@ -145,15 +144,13 @@ $(function(){
                     $('.menu-btn').removeClass('close').addClass('open')
                 }
 
-                console.log(LorR+'   '+menuDisplay);
+                // console.log(LorR+'   '+menuDisplay);
 
 
-            }else if(!IsHeng && ( event.type == 'touchend' || event.type == 'mouseup' && $(this).attr('id') == 'mask')){
+            }else if( !IsHeng && ( event.type == 'touchend' || event.type == 'mouseup' ) && $(this).attr('id') == 'mask' ){
                 hiddenMenu()
                 menuDisplay = null;
                 $('.line2').css({opacity:1});
-
-                console.log(LorR+' '+menuDisplay);
             }
         },
 
