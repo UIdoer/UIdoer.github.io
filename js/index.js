@@ -111,7 +111,7 @@ $(function(){
             $('.line3').css({'transform':'rotate('+(45-45*distance / asideWidth)+'deg)',bottom:8*distance / asideWidth+'px',position: 'relative'});
         }
     }
-    $('#page,#menu').swipe({
+    $('#page,#menu,#mask').swipe({
         allowPageScroll:'auto',
         swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
                 console.log(event.type);
@@ -128,6 +128,7 @@ $(function(){
             }
         // console.log(duration);
             if( !IsHeng && event.type == 'touchend' && distance > 15){
+                console.log($(this))
                 if(LorR == 'left'){
                     showMenu();
                     menuDisplay = '已经展开';
@@ -147,6 +148,12 @@ $(function(){
                 console.log(LorR+'   '+menuDisplay);
 
 
+            }else if(!IsHeng && ( event.type == 'touchend' || event.type == 'mouseup' && $(this).attr('id') == 'mask')){
+                hiddenMenu()
+                menuDisplay = null;
+                $('.line2').css({opacity:1});
+
+                console.log(LorR+' '+menuDisplay);
             }
         },
 
