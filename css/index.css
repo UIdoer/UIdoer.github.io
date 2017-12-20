@@ -30,6 +30,7 @@ a{text-decoration: none;color:#3399ff;}
     left:0;
     background:#f2f2f2;
     box-shadow: 10px 0 10px rgba(0,0,0,0.2);
+    overflow-y: scroll;
 }
 #mask{
     width:100vw;
@@ -107,6 +108,9 @@ a{text-decoration: none;color:#3399ff;}
     height:30px;
     padding:10px;
 }
+.logo:hover{
+    cursor:pointer;
+}
 .row .nav{
     float: right ;
 }
@@ -142,6 +146,9 @@ a{text-decoration: none;color:#3399ff;}
     line-height:50px;
     padding:0 10px;
     color:#000;
+}
+#menu .nav a:hover{
+    color:#fff;
 }
 
 .header .row,ul.navbar-nav,ul.navbar-nav>li,.navbar-nav>li>a,.menu-btn{

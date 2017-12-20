@@ -14,11 +14,11 @@ $(function(){
         winW = $(window).width();
         asideWidth = winW * 0.7;
         menuLeft = winW * 0.7;
-        hiddenMenu();
         menuDisplay = null;
         IsPad();
         orien();
         reNav(winW);
+        hiddenMenu();
     });
 
     function reNav(winw){
@@ -112,7 +112,6 @@ $(function(){
         }
     }
     $('#page,#menu,#mask').swipe({
-        allowPageScroll:'auto',
         swipeStatus:function(event, phase, direction, distance, duration, fingerCount){
                 // console.log(event.type);
             if(direction == 'left' || direction == 'right'){
@@ -153,6 +152,7 @@ $(function(){
                 $('.line2').css({opacity:1});
             }
         },
+        allowPageScroll:'auto',
 
     });
 
