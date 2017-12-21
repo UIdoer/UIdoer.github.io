@@ -183,6 +183,21 @@ a{text-decoration: none;color:#3399ff;}
         position:relative;
         top:0;
     }
+    .content{
+        display:block;
+        transition: top 0.2s;
+        -moz-transition: top 0.2s;  /* Firefox 4 */
+        -webkit-transition: top 0.2s;   /* Safari 和 Chrome */
+        -o-transition: top 0.2s;
+        overflow:hidden;
+        background-position:center center;
+        background-size: cover;
+    }
+    .content:hover{
+        box-shadow:0 3px 8px rgba(0,0,0,0.2);
+        position:relative;
+        top:-5px;
+    }
 }
 
 @media screen and (min-width:1367px) and (max-width:1920px){
@@ -357,19 +372,4 @@ a{text-decoration: none;color:#3399ff;}
 }
 .swiper-pagination-bullet{background:rgba(255,255,255,1);width:10px !important;height:10px !important;}
 .swiper-pagination-bullet-active{background:#fff;}
-.content{
-    display:block;
-    transition: top 0.2s;
-    -moz-transition: top 0.2s;  /* Firefox 4 */
-    -webkit-transition: top 0.2s;   /* Safari 和 Chrome */
-    -o-transition: top 0.2s;
-    overflow:hidden;
-    background-position:center center;
-   background-size: cover;
-}
-.content:hover{
-    box-shadow:0 3px 8px rgba(0,0,0,0.2);
-    position:relative;
-    top:-5px;
 
-}
