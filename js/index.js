@@ -74,7 +74,7 @@ $(function(){
          $('#page,#mask').animate({
             left:0
         },50,function(){
-            $('#page').css({left:0});
+            $('#page,.header').css({left:0});
             $('#menu').css({left:winW * 0.65});
         });
         $('#mask').animate({opacity:0},50).css({display:'none'});
@@ -87,7 +87,7 @@ $(function(){
     function showMenu(){
         pageLeft = - winW * 0.7;
         menuLeft = winW * 0.3;
-        $('#page,#mask').animate({
+        $('#page,#mask,.header').animate({
             left:'-70vw'
         },50);
         $('#menu').animate({
@@ -98,7 +98,7 @@ $(function(){
     //menu moveimg
     function menuMoveimg(distance){
         // console.log();
-        $('#page,#mask').css({
+        $('#page,#mask,.header').css({
             left:pageLeft + tmp * distance
         });
         $('#menu').css({
