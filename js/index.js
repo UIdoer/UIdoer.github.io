@@ -18,7 +18,7 @@ $(function(){
         IsPad();
         orien();
         reNav(winW);
-        hiddenMenu('fff');
+        hiddenMenu();
     });
 
     function reNav(winw){
@@ -68,7 +68,7 @@ $(function(){
     orien();
 
     //menu 收起
-    function hiddenMenu(rge){
+    function hiddenMenu(){
         pageLeft = 0;
         menuLeft = winW * 0.65;
          $('#page,#mask').animate({
@@ -78,9 +78,7 @@ $(function(){
             $('#menu').css({left:winW * 0.65});
         });
         $('#mask').animate({opacity:0},50).css({display:'none'});
-        if(!rge){
-            $('.menu-btn').toggleClass('close');
-        }
+        $('.menu-btn').toggleClass('close');
 
     }
     //menu 展开
