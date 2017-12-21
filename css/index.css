@@ -8,7 +8,7 @@
 body{
     width:100vw;
     height:100vh;
-    background:#f2f2f2;
+    background:#fefefe;
     overflow:hidden;
 }
 li{list-style: none;}
@@ -30,7 +30,7 @@ a{text-decoration: none;color:#3399ff;}
 #page{
     width:100vw;
     left:0;
-    background:#f2f2f2;
+    // background:#f2f2f2;
     box-shadow: 10px 0 10px rgba(0,0,0,0.2);
     overflow-y: scroll;
     overflow-x: hidden;
@@ -39,7 +39,6 @@ a{text-decoration: none;color:#3399ff;}
 {
     width: 4px;
     height: 0;
-    background-color: #F5F5F5;
 }
 
 /*定义滚动条轨道 内阴影+圆角*/
@@ -134,13 +133,15 @@ a{text-decoration: none;color:#3399ff;}
         top:0;
     }
     .content{
-        width:94.8%;
+        width:97.6%;
         margin:1.5% 1.2% 0 1.2%;
-        height:20vw;
+        height:40vw;
         background:#fff;
         border: 1px solid #ccc;
         border-radius:1.5vw;
-        padding:1.2%;
+        position:relative;
+        top:0;
+        // padding:1.2%;
     }
 }
 
@@ -172,13 +173,15 @@ a{text-decoration: none;color:#3399ff;}
         // top:0;
     }
     .content{
-        width:46%;
+        width:48%;
         margin:1% 1% 0 0;
         height:15vw;
         background:#fff;
         border: 1px solid #ccc;
         border-radius:0.5vw;
-        padding:1%;
+        // padding:1%;
+        position:relative;
+        top:0;
     }
 }
 
@@ -354,3 +357,19 @@ a{text-decoration: none;color:#3399ff;}
 }
 .swiper-pagination-bullet{background:rgba(255,255,255,1);width:10px !important;height:10px !important;}
 .swiper-pagination-bullet-active{background:#fff;}
+.content{
+    display:block;
+    transition: top 0.2s;
+    -moz-transition: top 0.2s;  /* Firefox 4 */
+    -webkit-transition: top 0.2s;   /* Safari 和 Chrome */
+    -o-transition: top 0.2s;
+    overflow:hidden;
+    background-position:center center;
+   background-size: cover;
+}
+.content:hover{
+    box-shadow:0 3px 8px rgba(0,0,0,0.2);
+    position:relative;
+    top:-5px;
+
+}

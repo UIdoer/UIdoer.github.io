@@ -84,7 +84,7 @@ $(function(){
 
     }
     //menu 展开
-    function showMenu(){
+    function showMenu(rge){
         pageLeft = - winW * 0.7;
         menuLeft = winW * 0.3;
         $('#page,#mask,.header').animate({
@@ -94,6 +94,9 @@ $(function(){
             left:'30vw'
         },50);
         $('#mask').animate({opacity:1},50).css({display:'block'});
+        if(!rge){
+            // $('.menu-btn').removeClass('close').toggleClass('close');
+        }
     }
     //menu moveimg
     function menuMoveimg(distance){
