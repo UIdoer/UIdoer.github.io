@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>打开一个文档</title>
+    <script src="js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+    <button>点击</button>
+    <pre>
+
+    </pre>
+    <?php
+    echo "Hello World!";
+    ?>
+    <script>
+        $(function(){
+            $('button').click(function(){
+               $.ajax({
+                    url:"https://uidoer.com/test.json",
+
+                    async:false,
+                    success:function(data){
+                        console.log(data);
+                    }
+                });
+                // $('pre').text(htmlobj);
+                // console.log(htmlobj);
+            });
+        });
+    </script>
+</body>
+</html>
