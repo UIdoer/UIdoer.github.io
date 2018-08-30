@@ -224,7 +224,7 @@ var baseMaterial = new THREE.MeshLambertMaterial({
 			video.src = window.URL.createObjectURL(stream);
 		  }, errorCallback);
 		} else {
-		  video.src = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/61062/rin-SD.mp4';
+		  video.src = './rin-SD.mp4';
 		}
 
 		videoImage = document.createElement( 'canvas' );
