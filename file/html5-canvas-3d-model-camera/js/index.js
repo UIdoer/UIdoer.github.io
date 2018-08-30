@@ -29,7 +29,7 @@
 
 	var screen_mesh;
 	var texture1;
-var base = "../json/";
+var base = "./json/";
 	var tv_screen,tv_context;
     var å = {
     	ready : {
