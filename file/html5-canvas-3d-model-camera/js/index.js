@@ -29,7 +29,7 @@
 
 	var screen_mesh;
 	var texture1;
-var base = "https://uidoer.github.io/file/";
+var base = "./";
 	var tv_screen,tv_context;
     var å = {
     	ready : {
